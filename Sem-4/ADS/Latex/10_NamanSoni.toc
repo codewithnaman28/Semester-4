@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}\textbf {Problem Statement}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objective}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textbf {\textit {Circular Linked List}}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textbf {\textit {Diffrence between SLL, CLL and DLL}}}{2}{}%
+\contentsline {subsection}{\numberline {3.3}\textbf {\textit {Various Operations on CLL}}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Implementation}}{3}{}%
+\contentsline {subsection}{\numberline {4.1}\textbf {\textit {Platform}}}{3}{}%
+\contentsline {subsection}{\numberline {4.2}\textbf {\textit {Input and Output}}}{3}{}%
+\contentsline {subsection}{\numberline {4.3}\textbf {\textit {Test Conditions}}}{3}{}%
+\contentsline {subsection}{\numberline {4.4}\textbf {\textit {Psuedo Code}}}{4}{}%
+\contentsline {section}{\numberline {5}\textbf {Conclusion}}{8}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ}}{8}{}%

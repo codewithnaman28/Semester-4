@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\begin{document}
+\lstset{style=mystyle}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+    { % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ \textit{Analysis of Algorithms}}\\[2\baselineskip] % Title
+		{\large\textit{Unit 1}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{Divide and Conquer}
+\subsection{Control Abstraction}
+\begin{lstlisting}
+    DANDC (P)
+    {
+        if SMALL (P) then return S (p);
+        else
+        {
+            divide p into smaller instances p1, p2,...Pk, k>=1;
+            apply DANDC to each of these sub problems;
+            return (COMBINE (DANDC (p1), DANDC (P2),...,DANDC (pk)));
+        }
+    }
+\end{lstlisting}
+\subsection{Time Complexity of the general algorithm}
+\begin{itemize}
+    \item A recurrence is an equation or inequality that describes a function in terms of its value on smaller inputs.
+    \item Special techniques are required to analyze the space and time required.
+    \item $T(n) = {\frac{aT(\frac{n}{b}+1)(n)+c(n)}{O(1)}}$
+    \item Time Complexity (recurrence relation):
+    (\begin{itemize}
+        \item where D(n): time for splitting 
+        \item C(n): time for conquer
+        \item c: a constant
+    \end{itemize})
+\end{itemize}
+\subsection{Methods for Solving recurrences}
+\begin{enumerate}
+    \item Substitution method: This method involves guessing a solution and then proving that it is correct.
+    \item Recurrence tree method: This method involves constructing a tree diagram that represents the recursive calls and their relationship to each other.
+    \item Master theorem: This is a general theorem that provides a method for solving recurrences of a specific form.
+\end{enumerate}
+\subsection{Math you need to Review}
+Properties of Logarithms:
+\begin{itemize}
+    \item $\log_b (xy) = \log_b(x) + \log_b(y)$
+    \item $\log_b(\frac{x}{y}) = \log_b(x) - \log_b(y)$
+    \item $\log_b xa = a\log_b x$
+    \item $\log_b a = \frac{\log_x a}{\log_b b}$
+\end{itemize}
+Properties of exponentials:
+\begin{itemize}
+    \item $a^{(b+c)} = a^b a^c$
+    \item $a^{bc} = (a^b) ^c$
+    \item $\frac{a^b}{a^c} = a^{(b-c)}$
+    \item $b = a^{\log_a b}$
+    \item $b^c = a^{c^*\log_a b}$
+\end{itemize}
+
+\end{document}
