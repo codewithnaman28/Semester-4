@@ -1,0 +1,169 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+    { % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Python Programming}\\[2\baselineskip] % Title
+		{\large\textit{Assignment 1}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Problem Statement}}
+Introduction to basic Python Commands.
+\section{\textbf{Aim}}
+To learn the basics of the python programming language and understand fundamental syntax and semantics of Python Programming.
+\section{\textbf{Objectives}}
+\begin{enumerate}
+    \item To learn the basics of python programming language.
+    \item To learn the variable declaration,user input and output of the programming language.
+\end{enumerate}
+\section{\textbf{Theory}}
+\subsection{\textbf{\textit{Introduction to Python}}}
+Python is a high-level, interpreted programming language that was first released in 1991. It is known for its simple and easy-to-read syntax, making it a popular choice for beginners and experienced developers alike. Python can be used for a wide range of tasks, including web development, scientific computing, data analysis, artificial intelligence, and more. It is an open-source language with a large and supportive community, and has a vast library of modules and tools available to users.
+\subsection{\textbf{\textit{Basic Commands in Python}}}
+\begin{enumerate}
+    \item Print: display a message on the screen. For example, print (``Hello World '').
+    \item Variable assignment: assign a value to a variable. For example, x = 5.
+    \item Arithmetic operations: perform mathematical operations such as addition, subtraction, multiplication, and division. For example, x + 5, x - 5, x * 5, and x / 5
+    \item Conditional statements: make decisions based on conditions. For example, if x > 5: print (``x is greater than 5'').
+    \item Loops: repeat a block of code multiple times. For example, for i in range (5): print (i).
+    \item Importing modules: use pre-existing code from other sources. For example, import math to use mathematical functions.
+\end{enumerate}
+\subsection{\textbf{\textit{Standard Data Types}}}
+The data stored in memory can be of many types. Python has various standard data types
+that are used to define the operations possible on them and the storage method for each of
+them.\\
+Python has 5 standard data types:
+\begin{itemize}
+    \item Numbers
+    \item String
+    \item List 
+    \item Tuple 
+    \item Dictionary
+\end{itemize}
+\section{\textbf{Platform}}
+Python\\
+Mac OS 64-bit\\
+Visual Studio Code
+\section{\textbf{Code Input/Output}}
+\begin{lstlisting}[language=python,caption=print function input]
+    print("Hello world!")
+\end{lstlisting}
+\begin{lstlisting}
+    Hello world!
+\end{lstlisting}
+\begin{lstlisting}[language=python,caption=declaring variable input]
+# declare variable
+a = 3
+print(a)
+print(type(a))
+b = 3.5
+print(type(b))
+print(b)
+c = "Hello"
+print(c)
+print(type(c))
+\end{lstlisting}
+\begin{lstlisting}
+3
+<class 'int'>
+<class 'float'>
+3.5
+Hello
+<class 'str'>
+\end{lstlisting}
+\begin{lstlisting}[language=python,caption=performing arithmetic operation input]
+a = 5
+b = 6
+print(a + b)
+\end{lstlisting}
+\begin{lstlisting}
+11
+\end{lstlisting}
+\begin{lstlisting}[language=python]
+a = input("Enter First Name:")
+b = input("Enter Last Name:")
+print(a + b)
+\end{lstlisting}
+\begin{lstlisting}
+naman soni 
+\end{lstlisting}
+\begin{lstlisting}[language=python]
+x = int(input("Enter the first number:"))
+y = int(input("Enter the second number:"))
+z = x + y
+print("Sum is:", z)
+\end{lstlisting}
+\begin{lstlisting}
+Sum is: 66
+\end{lstlisting}
+\begin{lstlisting}[language=python]
+x = float(input("Enter the first number:"))
+y = float(input("Enter the second number:"))
+z = x + y
+print("Sum is:", z)
+\end{lstlisting}
+\begin{lstlisting}
+Sum is: 110.6943    
+\end{lstlisting}
+\begin{lstlisting}[language=python]
+a = 45
+b = 65
+if (a == b):
+    print("equal")
+else:
+    print("not equal")
+\end{lstlisting}
+\begin{lstlisting}
+not equal
+\end{lstlisting}
+\begin{lstlisting}[language=python]
+my_list = [12, 13, 56, 43]
+print(my_list)
+\end{lstlisting}
+\begin{lstlisting}
+[12, 13, 56, 43]
+\end{lstlisting}
+
+\end{document}
