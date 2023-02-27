@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\begin{document}
+
+\lstset{style=mystyle}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+	{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ \textit{Software Engineering Technology}}\\[2\baselineskip] % Title
+		{\large\textit{Unit 1}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+	
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\centerline{\Huge\bfseries Software Requirement System}
+\section{Aim}
+The aim of SRS is to specify the software product in details. In other words, it contains all necessary and important information that the product team should be aware of in order to create the software.
+\section{Problem Statement}
+The restaurant industry is a fast-paced environment that requires efficient management of resources to ensure timely and quality service. In the traditional restaurant setting, the ordering process, food preparation, and inventory management are carried out manually, leading to errors, delays, and inefficiencies.
+\section{Objectives}
+\begin{enumerate}
+	\item User Management System:
+		\begin{itemize}
+			\item Ability to add/edit/delete employees and assign roles.
+			\item Login/logout functionality for employees.
+		\end{itemize}
+	\item Menu Management:
+		\begin{itemize}
+			\item Ability to add/edit/delete menu items.
+			\item Option to categorize menu items into sections.
+		\end{itemize}
+	\item Order Management System:
+		\begin{itemize}
+			\item Acceptance of orders through POS or online ordering system.
+			\item Real-time updates on order status.
+			\item Option to split and merge orders.
+		\end{itemize}
+	\item Inventory Management:
+		\begin{itemize}
+			\item Keep track of ingredient levels and generate low stock alerts.
+			\item Option to import/export inventory data in CSV format.
+		\end{itemize}
+	\item Reports and Analytics:
+		\begin{itemize}
+			\item Generate sales reports and analysis of sales trends.
+			\item Track customer orders and preferences.
+		\end{itemize}
+	\item Customer Management:
+		\begin{itemize}
+			\item 	Option to store customer information and track their order history.
+			\item 	Send personalized offers and promotions.
+		\end{itemize}
+	\item Payment Processing:
+		\begin{itemize}
+			\item Integration with multiple payment gateways for online and offline payments.
+			\item Secure storage and processing of sensitive payment information.
+		\end{itemize}
+	\item Security and Access Control:
+		\begin{itemize}
+			\item Role-based access control to restrict access to sensitive information.
+			\item Regular backups to ensure data security.
+		\end{itemize}
+	\item Integration and Scalability:
+		\begin{itemize}
+			\item Integration with third-party software and hardware.
+			\item Option to scale the system as the business grows.
+		\end{itemize}
+\end{enumerate}
+\end{document}

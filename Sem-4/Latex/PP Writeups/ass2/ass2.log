@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.7)  23 FEB 2023 10:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.7)  15 FEB 2023 02:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Unit1.tex
-(./Unit1.tex
+**ass2.tex
+(./ass2.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/article.cls
@@ -125,23 +125,23 @@ ef
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count274
 \l__pdf_internal_box=\box52
-) (./Unit1.aux)
-\openout1 = `Unit1.aux'.
+) (./ass2.aux)
+\openout1 = `ass2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -194,46 +194,23 @@ LaTeX Font Info:    ... okay on input line 33.
 ) [1
 
 {/usr/local/texlive/2022basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (.
-/Unit1.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
-)
+/ass2.toc)
 \tf@toc=\write3
-\openout3 = `Unit1.toc'.
+\openout3 = `ass2.toc'.
 
- [1] [2] [3] [4] (./Unit1.aux) ) 
+ [1])
+! Emergency stop.
+<*> ass2.tex
+            
+*** (job aborted, no legal \end found)
+
+ 
 Here is how much of TeX's memory you used:
- 3734 strings out of 479719
- 53717 string characters out of 5880575
- 439244 words of memory out of 5000000
- 21750 multiletter control sequences out of 15000+600000
- 473360 words of font info for 42 fonts, out of 8000000 for 9000
+ 3463 strings out of 479719
+ 51630 string characters out of 5880575
+ 350377 words of memory out of 5000000
+ 21485 multiletter control sequences out of 15000+600000
+ 472390 words of font info for 38 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 55i,5n,62p,233b,1094s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/karma/Library/texlive/2022basic/texmf-
-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2022basic/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basi
-c/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022
-basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texliv
-e/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/t
-exlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loc
-al/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
-local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pf
-b></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
-pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy5.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmtt8.pfb>
-Output written on Unit1.pdf (5 pages, 172550 bytes).
-PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 55i,5n,62p,190b,262s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

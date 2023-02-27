@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.7)  23 FEB 2023 10:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.7)  8 FEB 2023 20:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Unit1.tex
-(./Unit1.tex
+**10_NamanSoni_Asignment2.tex
+(./10_NamanSoni_Asignment2.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/article.cls
@@ -125,23 +125,23 @@ ef
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count274
 \l__pdf_internal_box=\box52
-) (./Unit1.aux)
-\openout1 = `Unit1.aux'.
+) (./10_NamanSoni_Asignment2.aux)
+\openout1 = `10_NamanSoni_Asignment2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -194,46 +194,114 @@ LaTeX Font Info:    ... okay on input line 33.
 ) [1
 
 {/usr/local/texlive/2022basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (.
-/Unit1.toc
+/10_NamanSoni_Asignment2.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 2.
+(Font)              <7> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
+(Font)              <5> on input line 4.
 )
 \tf@toc=\write3
-\openout3 = `Unit1.toc'.
+\openout3 = `10_NamanSoni_Asignment2.toc'.
 
- [1] [2] [3] [4] (./Unit1.aux) ) 
+ [1]
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 91--93
+
+ []
+
+(/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+)
+[3] [4] [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 459--460
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
+
+ []
+
+[10] (./10_NamanSoni_Asignment2.aux) ) 
 Here is how much of TeX's memory you used:
- 3734 strings out of 479719
- 53717 string characters out of 5880575
- 439244 words of memory out of 5000000
- 21750 multiletter control sequences out of 15000+600000
- 473360 words of font info for 42 fonts, out of 8000000 for 9000
+ 4033 strings out of 479719
+ 57847 string characters out of 5880575
+ 927413 words of memory out of 5000000
+ 22040 multiletter control sequences out of 15000+600000
+ 473706 words of font info for 43 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 55i,5n,62p,233b,1094s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/karma/Library/texlive/2022basic/texmf-
-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2022basic/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basi
-c/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022
-basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texliv
-e/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/t
-exlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loc
-al/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
-local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pf
-b></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
-pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy5.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmtt8.pfb>
-Output written on Unit1.pdf (5 pages, 172550 bytes).
+ 55i,6n,64p,533b,1783s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/karma/Library/texlive/2022basic/
+texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2022ba
+sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/20
+22basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texliv
+e/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/
+texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/l
+ocal/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></
+usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
+b></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+2.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt8.pfb>
+Output written on 10_NamanSoni_Asignment2.pdf (11 pages, 150678 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 90 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

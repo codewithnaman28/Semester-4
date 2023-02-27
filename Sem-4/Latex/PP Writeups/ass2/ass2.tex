@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+		
+		\raggedleft\rule{1pt}{\textheight} % Vertical line
+		\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+		\parbox[b]{0.75\textwidth}
+		{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+			
+			{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Python Programming}\\[2\baselineskip] % Title
+			{\large\textit{Assignment 2}}\\[4\baselineskip] % Subtitle or further description
+			{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+			
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+		
+\end{titlepage}
+	\tableofcontents
+	\pagebreak
+\section{\textbf{Problem Statement}}
+To find the largest of three
+\section{\textbf{Aim}}
+To write a python program to find the greatest of the three numbers.
+\section{\textbf{Objectives}}
+To learn and implement different forms of if..else statement.
+\section{\textbf{Theory}}
+\subsection{\textbf{\textit{Decision Making}}}
+Following is the general form of a typical decision-making structure found in most of the
+programming languages: \\
+Python programming language assumes any non-zero and non-null values as TRUE, and
+if it is either zero or null, then it is assumed as FALSE value.
+Python programming language provides following types of decision-making statements.
+\subsection{\textbf{\textit{Statement and Description}}}
+\begin{enumerate}
+	\item \textbf{if Statements:} An if statement consists of a boolean expression followed by one or more statements.
+	\item \textbf{if else Statements:} An if statement can be followed by an optional else statement, which executes when the boolean expression is FALSE.
+	\item \textbf{if else Statements:}If more then 2 conditions needs to be checked, then if..elif..else statement can be used.
+	\item \textbf{nested if statements:} You can use one if or else if statement inside another if or else ifstatement(s).
+\end{enumerate}
+\section{\textbf{Platform}} Mac OS 64 bits\\
+Python
+\section{\textbf{Input}} 
+Accept three integer numbers from the user
+\section{\textbf{Output}} 
+Display largest of three integer numbers accepted from the user
+\section{\textbf{Conclusion}} 
+Studied implementation of different forms of if...else statements using python programming.
+\section{\textbf{FAQs}} 
+ Describe following logical and relational operators with suitable examples.\\
+Logical operators: and, or and not\\
+Relational operators: <, >, <=, >=, ==,!=

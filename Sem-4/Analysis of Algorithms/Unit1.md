@@ -32,3 +32,6 @@ Methods for Solving recurrences
 Math you need to Review
 
     $\log_b (xy) = log_b(x) + log_b(y)
+
+## Binary Search ##
+Example2

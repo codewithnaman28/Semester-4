@@ -97,5 +97,88 @@ Properties of exponentials:
     \item $b = a^{\log_a b}$
     \item $b^c = a^{c^*\log_a b}$
 \end{itemize}
-
+\section{Divide-and-Conquer Examples}
+\begin{itemize}
+	\item Sorting: mergesort and Quick Sort
+	\item Binary tree traversals
+	\item Binary search 
+	\item Multiplication of Large integers 
+	\item Matrix Multiplicatoion: Strassen's algorithm 
+	\item Closet-pair and convex-hull algorithms
+\end{itemize}
+\section{Proof Techniques}
+\begin{itemize}
+	\item Proof is a kind of demonstration to convince that the given mathematical statement is true.
+	\item The statement which is to be proved is called theorem. Once a particulare theorem is proved then it can be used to prove further statements.
+	\item The theorem is also called Lemma.
+	\item The proof can be a deductive proof or inductive proof.
+	\item The deductive proof consist of sequence of statements given with logical reasoning.
+	\item The inductive proof is a recursive kind of proof which consists of sequence or parameterized statements that use the statement itself or the statement with lower values of its parameters/.
+\end{itemize}
+\subsection{Proof by contradiction}
+\begin{itemize}
+	\item In this type of proof, for the statement of this form is A and the B. 
+	\item Prove by contradiction. There exist two irrational numbers x and y such that $x^y$ is rational.
+	\begin{itemize}
+		\item An irrational number is any number taht cannot be expressed as a/b where a and b are integers and value b is non zero. To prove that $x^y$ is rational when x and y are rational numbers.
+		
+	\end{itemize}
+\end{itemize}
+\subsection{Proof by Mathematical Induction}
+\begin{itemize}
+	\item Prove $ 1+ 2+3...+n = n(n+1)/2$
+	\begin{itemize}
+		\item 1) Basis of incution
+		\item Assume, n = 1 then 
+		\item LHS = n = 1
+		\item RHS =$ n(n+1)/2 = 1 (1+1)/2 = 2/2 =1$
+		\item 2) Induction hypothesis
+		\item Now we will assume n = K and will obtain the result for it. The equation then becomes,
+		\item $ 1 + 2 + 3 + ... + K = K(K=1)/2 $
+		\item 3) Inductive step
+		\item Now we assume that equation is true for n = K and we willl then check if it is also true for n = K + 1 or not.
+		\item Consider the equqtion assuming n = K + 1
+		\item LHS = 1 + 2 + 3 + ... + K + K  + 1
+		\item = $ K ( K + 1)/2 + K + 1$	
+		\item = $ K ( K + 1) + 2 (K + 1)/2$
+		\item = $ ( K + 1) ( K + 2)/2$
+	\end{itemize}
+\end{itemize}
+\subsection{Direct Proof}
+\begin{itemize}
+	\item In direct Proof, the intended proof can be proved by basic principle or axiom.
+	\item Example:- Prove that the negative of any even integer is even.
+	\item Solution: to prove this, let n be any positive even number. Hence we can write n as 
+	\item $n = 2m$		where m can be any number
+	\item if we multiply both side by -1, we get 
+	\item $-n = -2m$
+	\item $-n = 2 (-m)$
+	\item Multiplying any number by 2 makes it an even number.
+	\item Hence, -n is even.
+	\item Thus proves that the negative of any even integer is even.
+\end{itemize}
+\subsection{Proof by Counter-Example}
+\begin{itemize}
+	\item This is a technique of proof in which a->b is true if ~a->~b
+	\item If negative statement of given statemetn is true then the given statement becomes automatically true.
+	\item Example: prove contraposition that $ x + 8$ is odd
+	\item Solution:
+		\begin{itemize}
+			\item Step 1: we assume that x is not odd
+			\item Step 2: that means x is even. By definition of even numbers 2 * any number = even number.
+			\item $ x = 2 * m$ 		where m can be any number
+			\item we can write $ x+ 8$ as $ 2*m+8=2(m+4)= even number$
+			\item thus, $ x + 8$ is even 
+		\end{itemize}
+\end{itemize}
+\section{Brute Force}
+\begin{itemize}
+	\item Burete force is a straightforward approach to solve a problem based on the problem's statement and definitions of the concepts involved.
+	\item It is condidered as one of the easiest approach to apply and is useful for solving small-size instances of a problem.
+\end{itemize}
+\subsection{Brute Force Search and Sort}
+\begin{itemize}
+	\item Sequential search in an unordered array and simple sorts- selection sort, bubble sort are brute force algorithm.
+	\item Sequential search: the algorithm simply compared successive elements of a given list with a given search key until either a match is found or the list is exhausted without finding a match.
+\end{itemize}
 \end{document}
