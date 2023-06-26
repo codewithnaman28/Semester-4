@@ -1,3 +1,4 @@
+% !TeX spellcheck = <none>
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in]{geometry}
@@ -173,7 +174,7 @@ Properties of exponentials:
 \end{itemize}
 \section{Brute Force}
 \begin{itemize}
-	\item Burete force is a straightforward approach to solve a problem based on the problem's statement and definitions of the concepts involved.
+	\item Burte force is a straightforward approach to solve a problem based on the problem's statement and definitions of the concepts involved.
 	\item It is condidered as one of the easiest approach to apply and is useful for solving small-size instances of a problem.
 \end{itemize}
 \subsection{Brute Force Search and Sort}
@@ -181,4 +182,28 @@ Properties of exponentials:
 	\item Sequential search in an unordered array and simple sorts- selection sort, bubble sort are brute force algorithm.
 	\item Sequential search: the algorithm simply compared successive elements of a given list with a given search key until either a match is found or the list is exhausted without finding a match.
 \end{itemize}
+\section{Greedy Algorithms}
+\begin{itemize}
+	\item It is used to solve problems that have `n` inputs and require us to obtain a subset that satusfies some constariants.
+	\item Any subset taht satisfied the constraints is called as feasible solution.
+	\item We need to find the optimum feasible solution.
+\end{itemize}
+Example: A Greedy Algorithm for Coin Changing
+\begin{enumerate}
+	\item Set remval = initial-value
+	\item Choose largest coin that is less than remval.
+	\item Addcoin to ser of coins and set remval: = rervamal-coin-value.
+	\item repeat steps 2 and 3 until remval = 0
+\end{enumerate}
+\subsection{Knapsack Problem}
+\begin{itemize}
+	\item An optimization problem is one in which you want to find, not just a solution, but the best solution.
+	\item A ``greedy algorithm`` sometimes works well for optimization problems.
+	\item A greedy algorithm works in phases. At each phase:
+		\begin{itemize}
+			\item You take the best you can get right now, without regard for future consequences.
+			\item You hope that by choosing a local optimum at each step, you will end up at a global optimum.
+		\end{itemize}
+\end{itemize}
+                                          
 \end{document}

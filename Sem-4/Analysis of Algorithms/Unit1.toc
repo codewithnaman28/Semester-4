@@ -9,3 +9,7 @@
 \contentsline {subsection}{\numberline {3.2}Proof by Mathematical Induction}{3}{}%
 \contentsline {subsection}{\numberline {3.3}Direct Proof}{4}{}%
 \contentsline {subsection}{\numberline {3.4}Proof by Counter-Example}{4}{}%
+\contentsline {section}{\numberline {4}Brute Force}{4}{}%
+\contentsline {subsection}{\numberline {4.1}Brute Force Search and Sort}{5}{}%
+\contentsline {section}{\numberline {5}Greedy Algorithms}{5}{}%
+\contentsline {subsection}{\numberline {5.1}Knapsack Problem}{5}{}%
