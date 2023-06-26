@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}\textbf {Problem Statement}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Objectives}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Theory}}{2}{}%
+\contentsline {section}{\numberline {5}\textbf {Platform}}{3}{}%
+\contentsline {section}{\numberline {6}\textbf {Input}}{3}{}%
+\contentsline {section}{\numberline {7}\textbf {Output}}{5}{}%
+\contentsline {section}{\numberline {8}\textbf {Conclusion}}{5}{}%
+\contentsline {section}{\numberline {9}\textbf {FAQ's}}{5}{}%
