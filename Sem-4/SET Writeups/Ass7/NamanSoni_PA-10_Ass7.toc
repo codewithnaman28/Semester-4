@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objectives}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Problem Statement}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {4.1}\textbf {Component Diagram}}{2}{}%
+\contentsline {section}{\numberline {5}\textbf {Component Diagram}}{3}{}%
+\contentsline {section}{\numberline {6}\textbf {Conclusion}}{3}{}%
+\contentsline {section}{\numberline {7}\textbf {FAQ's}}{4}{}%
+\contentsline {subsection}{\numberline {7.1}\textit {The term component is sometimes a difficult one to define. First provide a generic definition, and then provide more explicit definitions for object- oriented and traditional software. Finally, pick three programming languages with which you are familiar and illustrate how each defines a component.}}{4}{}%
+\contentsline {subsection}{\numberline {7.2}\textit {What is a WebApp component?}}{4}{}%
+\contentsline {subsection}{\numberline {7.3}\textit {State the importance of deployment diagram.}}{5}{}%
