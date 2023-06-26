@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+	\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+	{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Information and Cyber \\ Security}\\[2\baselineskip] % Title
+		{\large\textit{Assignment 8}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+	
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Aim}}
+Demonstrate Email Security using: PGP or S/MIME for Confidentiality, Authenticity and Integrity.
+\section{\textbf{Objectives}}
+To learn secure email communication
+\section{\textbf{Theory}}
+The steps for secure email message exchange using PGP:
+\begin{itemize}
+    \item Install PGP software: Install PGP software on your computer. There are many different PGP software programs available, such as GnuPG or Symantec Encryption Desktop.
+    \item Generate public and private keys: Generate a pair of public and private keys using the PGP software. The private key should be kept secret and protected with a strong passphrase, while the public key can be shared with others.
+    \item Generate public and private keys: Generate a pair of public and private keys using the PGP software. The private key should be kept secret and protected with a strong passphrase, while the public key can be shared with others.
+    \item Share public keys: Share your public key with the person you want to exchange encrypted emails with, and ask them to share their public key with you.
+    \item Import public keys: Import the public keys of the people you want to communicate with into your PGP software.
+    \item Compose the message: Compose the message you want to send using your email client.
+    \item Encrypt the message: Use your PGP software to encrypt the message using the public key of the recipient. This will ensure that only the recipient with the corresponding private key can read the message.
+    \item Sign the message: Sign the encrypted message using your private key. This will allow the recipient to verify that the message came from you and has not been tampered with.
+    \item Send the message: Send the encrypted and signed message using your email client.
+    \item Receive and decrypt the message: When you receive an encrypted and signed message from someone, use your PGP software to decrypt the message using your private key, and verify the signature using the sender's public key.
+\end{itemize}
+\section{\textbf{Programming Language Used}}
+\textit{Python}
+\section{\textbf{Conclusion}}
+Thus, we learned how to use PGP in python.
+\section{\textbf{FAQ's}}
+\subsection{\textbf{How email security is provided through PGP?}}
+\textbf{Ans.} \begin{itemize}
+	\item PGP (Pretty Good Privacy) provides email security through a combination of encryption, digital signatures, and compression. When a user sends an email using PGP, the message is encrypted using a symmetric key algorithm.
+	\item The symmetric key is then encrypted using the recipient's public key, which is obtained from a key server or a public key directory. The encrypted message and the encrypted symmetric key are then sent to the recipient, who can decrypt the message using their private key.
+	\item PG also allows users to sign their emails digitally using their private key. The digital signature provides a way for the recipient to verify that the email was actually sent by the claimed sender, and that it has not been altered in transit.
+	\item In addition, PGP can compress the message before encryption, which can reduce the size of the message and make it easier to send over a slow or unreliable connection.
+\end{itemize}
+\subsection{\textbf{What type of encryption is PGP?}}
+\textbf{Ans.} PG uses a combination of symmetric and asymmetric encryption. The symmetric encryption algorithm is used to encrypt the message itself, while the asymmetric encryption algorithm is used to encrypt the symmetric key.\\
+
+The symmetric encryption algorithm used in PG is typically AES (Advanced Encryption Stan-dard), which is a widely used and highly secure algorithm. The asymmetric encryption algorithm used in PG is typically RSA (Rivest-Shamir-Adleman), which is also widely used and highly secure.
+\subsection{\textbf{What is the key size allowed in PGP}}
+\textbf{Ans.} PG supports a wide range of key sizes, from 512 bits to 4096 bits. The key size determines the level of security provided by the encryption algorithm.\\
+
+In general, larger key sizes provide stronger security, but they also require more processing power to encrypt and decrypt the data. For most purposes, a key size of 2048 bits is considered to be sufficient, but some applications may require larger key sizes for enhanced security.
+\end{document}

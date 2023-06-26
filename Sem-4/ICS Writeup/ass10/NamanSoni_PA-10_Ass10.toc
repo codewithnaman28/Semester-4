@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objectives}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textit {HIDS \textit {}- Host-based IDS}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textit {NIDS \- Network-based IDS}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Platform}}{2}{}%
+\contentsline {section}{\numberline {5}\textbf {Conclusion}}{2}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ's}}{2}{}%
+\contentsline {subsection}{\numberline {6.1}\textit {What are various types of IDS system?}}{2}{}%
+\contentsline {subsection}{\numberline {6.2}\textit {What are the popular tools based on IDS systems?}}{3}{}%
+\contentsline {subsection}{\numberline {6.3}\textit {What are the detection methods of IDS?}}{3}{}%

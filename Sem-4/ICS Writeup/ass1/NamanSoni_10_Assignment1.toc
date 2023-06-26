@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objective}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textbf {\textit {Cryptography}}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textbf {\textit {Substitution Cypher}}}{2}{}%
+\contentsline {subsection}{\numberline {3.3}\textbf {\textit {Transposition Cypher}}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Code}}{3}{}%
+\contentsline {section}{\numberline {5}\textbf {Conclusion}}{4}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ's}}{4}{}%

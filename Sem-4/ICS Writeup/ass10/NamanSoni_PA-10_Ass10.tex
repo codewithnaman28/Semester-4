@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+	\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+	{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Information and Cyber \\ Security}\\[2\baselineskip] % Title
+		{\large\textit{Assignment 10}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+	
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Aim}}
+Configuration and demonstration of Intrusion Detection System using Snort
+\section{\textbf{Objectives}}
+To learn authentication techniques for Access Control
+
+\section{\textbf{Theory}}
+Host-based IDS (HIDS) and Network-based IDS (NIDS) are two types of intrusion detection systems that are used to monitor and detect potential security threats.
+\subsection{\textit{HIDS \textit{}- Host-based IDS}}
+A Host-based IDS (HIDS) is an IDS system that is installed on individual hosts or endpoints to monitor the activity on that host. It uses system logs, file integrity checks, and other methods to identify potential security threats. The HIDS can detect attacks that are not visible on the network, such as local privilege escalation, malware infections, and unauthorized access attempts.
+Example: OSSEC is an open-source HIDS that can detect various host-based attacks, including rootkits, file changes, and unauthorized access attempts. It uses a combination of signature-based, anomaly-based, and heuristic-based detection methods to increase the accuracy of attack detection and reduce false positives.
+\subsection{\textit{NIDS \- Network-based IDS}}
+A Network-based IDS (NIDS) is an IDS system that is installed on the network to monitor traffic passing through it. It analyzes packets passing through the network to identify suspicious behavior, such as unusual traffic patterns, unauthorized access attempts, and malware infections. NIDS can detect attacks that are visible on the network, but may not detect attacks that are targeted to a specific host or endpoint.
+Example: Snort is an open-source NIDS that can detect a wide range of attacks and anomalies in network traffic. It uses a combination of signature-based, anomaly-based, and heuristic-based detection methods to increase the accuracy of attack detection and reduce false positives. Suricata is another open-source NIDS that can detect various network-based attacks, including DDoS, malware infections, and suspicious traffic patterns.
+HIDS and NIDS can be used together to provide a comprehensive security solution. While HIDS is good at detecting attacks on a specific host or endpoint, NIDS can detect attacks that are not visible on the host or endpoint. Using both HIDS and NIDS can help provide a layered security approach to detect and respond to potential security threats.
+
+\section{\textbf{Platform}}
+Operating System: Mac OS 64--bit
+IDEs or Text Editors Used: Visual Studio Code
+
+\section{\textbf{Conclusion}}
+Thus, We have learnt IDS systems and their types. We have also learnt about various tools based on
+IDS systems.
+\section{\textbf{FAQ's}}
+\subsection{\textit{What are various types of IDS system?}}
+There are two main types of IDS systems:
+\begin{itemize}
+	\item Network-based IDS (NIDS): NIDS systems monitor network traffic in real-time to detect and alert on potential attacks. They analyze packets passing through the network to identify suspicious behavior, such as unusual traffic patterns, unauthorized access attempts, and malware infections.
+	\item Host-based IDS (HIDS): HIDS systems monitor the activity on individual hosts to detect and alert on potential attacks. They analyze system logs, file integrity, and user activity to identify suspicious behavior, such as unauthorized access, malware infections, and changes to system configurations.
+	
+\end{itemize}
+\subsection{\textit{What are the popular tools based on IDS systems?}}
+There are several popular tools based on IDS systems, including:
+\begin{itemize}
+	\item Snort: an open-source NIDS that can detect a wide range of attacks and anomalies in network traffic.
+	\item Suricata: an open-source NIDS that can detect and alert on various network-based at-tacks, including DDoS, malware infections, and suspicious traffic patterns.
+	\item OSSEC: an open-source HIDS that can detect and alert on various host-based attacks, including rootkits, file changes, and unauthorized access attempts.
+	\item Bro: an open-source NIDS that can detect and alert on various network-based attacks, including malware infections, network scans, and suspicious traffic patterns.
+	\item Security Onion: a Linux distribution that includes several IDS tools, including Snort, Suricata, and Bro, and provides a centralized platform for monitoring and analyzing network and host activity.
+	
+\end{itemize}
+\subsection{\textit{What are the detection methods of IDS?}}
+IDS systems use several methods for detecting potential attacks, including:
+\begin{itemize}
+	\item Signature-based detection: IDS systems can detect known attacks by comparing network or host activity to a database of known attack signatures. If a match is found, the IDS can generate an alert.
+	\item Anomaly-based detection: IDS systems can detect new or unknown attacks by identifying patterns or behavior that deviate from normal or expected activity. This method requires a baseline of normal activity to be established, which the IDS can then use to identify anomalies.
+	\item Heuristic-based detection: IDS systems can detect potential attacks by using algorithms and rules to identify behavior that is indicative of an attack. This method can be more flexible than signature-based detection, but can also result in more false positives.
+	\item Hybrid detection: IDS systems can use a combination of signature-based, anomaly-based, and heuristic-based detection methods to increase the accuracy of attack detection and reduce false positives.
+	
+\end{itemize}
+\end{document}
+

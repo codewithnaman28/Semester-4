@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objectives}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textit {SSL Certificate}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textit {How does an SSL certificate work?}}{2}{}%
+\contentsline {subsection}{\numberline {3.3}\textit {Types of SSL certificates}}{2}{}%
+\contentsline {subsection}{\numberline {3.4}\textit {Benefits of SSL certificates}}{2}{}%
+\contentsline {subsection}{\numberline {3.5}\textit {Example}}{3}{}%
+\contentsline {section}{\numberline {4}\textbf {Platform}}{3}{}%
+\contentsline {section}{\numberline {5}\textbf {Conclusion}}{3}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ's}}{3}{}%
+\contentsline {subsection}{\numberline {6.1}\textit {What type of encryption does SSL use?}}{3}{}%
+\contentsline {subsection}{\numberline {6.2}\textit {How safe is SSL?}}{3}{}%
+\contentsline {subsection}{\numberline {6.3}\textit {What are the benefits of SSL?}}{4}{}%

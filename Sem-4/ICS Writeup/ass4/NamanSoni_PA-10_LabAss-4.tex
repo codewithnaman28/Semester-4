@@ -1,0 +1,162 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+	\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+	{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Information and Cyber \\ Security}\\[2\baselineskip] % Title
+		{\large\textit{Assignment 4}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+	
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Aim}}
+Write a program using JAVA or Python or C++ to implement RSA asymmetric key algorithm.
+\section{\textbf{Objective}}
+To understand the concepts of public key and private key
+\section{\textbf{Theory}}
+\subsection{\textbf{\textit{Number Theory}}}
+\begin{itemize}
+	\item \textbf{EulerTotient Function:} Let n be a positive integer. The Euler totient function $\varphi$(n) is the number of positive integers less than or equal to n that are relatively prime to n. In other words, it is the number of integers k in the range 1 $\leq$ k $\leq$ n for which the greatest common divisor gcd(n,k) is equal to 1.
+	\item \textbf{Euclidean Algorithm:} It is method for finding the GCD of two integers. It involves interactively finding the remainder when one number is divided by the other, and then replacing the larger number with the smaller number and the smaller number with the remainder. This process is repeated until the remainder is zero, at which point the GCD has been found. The Euclidean algorithm can be used to find the multiplicative inverse of a modulo n by finding the GCD of a and n and checking that it is 1. If it is, then the multiplicative inverse is given by the value of x in the last update step.
+	\item \textbf{Extended Euclidean Algorithm:} The extended Euclidean algorithm is an extension to the Euclidean algorithm, and is used to find integers x and y such that ax+by= gcd(a,b). It is also used to find the multiplicative inverse of a modulo n, that is, the number x such that ax $\equiv$ 1 (mod n). The extended Euclidean algorithm is based on the observation that in the Euclidean algorithm, when a is replaced by a mod b, the new a and b are coprime, and the GCD does not change. This replacement can be repeated until the two numbers become equal, at which point the GCD has been found. The extended Euclidean algorithm goes one step further: at each step, the values of x and y are also updated. The updated values of x and y can be used to find the GCD of the original a and b by the equation ax+by= gcd(a,b). The extended Euclidean algorithm can be used to find the multiplicative inverse of a modulo n by finding the GCD of a and n and checking that it is 1. If it is, then the multiplicative inverse is given by the value of x in the last update step.
+\end{itemize}
+\section{\textbf{Language Used}}
+Python 
+\section{\textbf{Code}}
+\begin{lstlisting}[language=python, caption={Input}]
+	import math
+	
+	
+	def gcd(a, b):
+	if b == 0:
+	return a
+	return gcd(b, a % b)
+	
+	
+	def isPrime(a):
+	for i in range(2, int(math.sqrt(a)) + 1):
+	if a % i == 0:
+	return False
+	return True
+	
+	
+	def extEuc(a, b):
+	old_r, r = a, b
+	old_s, s = 1, 0
+	old_t, t = 0, 1
+	while r != 0:
+	quotient = old_r // r
+	old_r, r = r, (old_r - (quotient * r))
+	old_s, s = s, (old_s - (quotient * s))
+	old_t, t = t, (old_t - (quotient * t))
+	
+	return old_t
+	
+	
+	p, q = [int(i) for i in input("Enter Prime number p and q: ").split(" ")]
+	
+	if isPrime(p) and isPrime(q):
+	n = p * q
+	totient_n = (p - 1) * (q - 1)
+	e = 2
+	while e < totient_n:
+	if gcd(totient_n, e) == 1:
+	break
+	e += 1
+	print("Value of e: ", e)
+	# calculating e inv
+	d = extEuc(totient_n, e) % totient_n
+	print("Value of d: ", d)
+	message = int(input("Enter message for encrypting"))
+	cypherText = pow(message, e) % n
+	print("Cypher text is ", cypherText)
+	messageDecrypt = pow(cypherText, d) % n
+	print("Message text is ", messageDecrypt)
+	else:
+	print("Entered number is not prime numbers")
+	
+\end{lstlisting}
+\begin{lstlisting}[caption={Output}]
+	Enter Prime number p and q: 17 7
+	Value of e:  5
+	Value of d:  77
+	Enter message for encrypting 10
+	Cypher text is  40
+	Message text is  10
+\end{lstlisting}
+\section{\textbf{Conclusion}}
+Thus, learnt about the RSA encryption and decryption, and how to implement it using python.
+\section{\textbf{FAQ's}}
+\begin{enumerate}
+	\item Compare symmetric key cryptography and asymmetric key cryptography\\
+	
+	\textbf{Ans.} 
+	\begin{itemize}
+		\item In symmetric key cryptography, the same key is used for both encryption and decryption.
+		\item In asymmetric key cryptography, two different keys are used for encryption and decryption, which are Private key and Public Key respectively.
+		\item symmetric key cryptography is faster.
+		\item asymmetric key cryptography is slower than symmetric key cryptography.
+		\item Symmetric key cryptography is used for bulk encryption.
+		\item Asymmetric key cryptography is used for key exchange.
+		\item In symmetric key cryptography, Requires managing a large no.of keys for each user.
+		\item In asymmetric key cryptography, user has only one key pair.
+		\item Symmetric key cryptography Example: DES, AES, 3DES.
+		\item Asymmetric key cryptography Example: RSA, DSA, ECC.
+	\end{itemize}
+	\item Write advantages and disadvantages of RSA algorithm\\
+	
+	\textbf{Ans.} \textbf{\textit{Advantages:}}
+	\begin{itemize}
+		\item \textbf{Security:} RSA utilizes two large prime numbers to create public and private keys for securing data transfers. The user’s public key can be safely shared with anyone, while their private key remains secret. This makes it virtually impossible for an attacker to decrypt the message without the private key.
+		\item \textbf{Easy Implementation:} The RSA algorithm is relatively easy to implement compared to other encryp- tion algorithms. Since it relies on basic mathematical operations, it can be implemented using simple programming languages such as Python or Java.
+		\item \textbf{Flexible Key Management:} RSA supports a key length ranging from 1024 bits to 4096 bits. Longer key sizes provide better security but come with a computational cost. RSA algorithm also supports key rotation, which means users can change their keys regularly to enhance their protection.
+	\end{itemize}
+	\textbf{\textit{Disadvantages:}}
+	\begin{itemize}
+		\item \textbf{\textit{Slow:}}  RSA is a relatively slow algorithm. It takes a long time to encrypt and decrypt data. This makes
+		it unsuitable for applications that require high-speed data transfer.
+		\item \textbf{\textit{Not Suitabel for Bulk Encryption:}} SA is not suitable for bulk encryption. It is best suited for encrypting small amounts of data.
+		\item \textbf{\textit{Key Management:}} Key management is challenging in RSA encryption because large keys need higher processing power, which makes it difficult to generate, store and transmit safely.
+	\end{itemize}
+\end{enumerate}
+\end{document}

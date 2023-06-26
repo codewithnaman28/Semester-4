@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objectives}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textbf {\textit {Explain Simplified Advanced Encryption Standard (S-AES) algorithm.}}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Programming Language Used}}{2}{}%
+\contentsline {section}{\numberline {5}\textbf {Code}}{2}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ's}}{9}{}%

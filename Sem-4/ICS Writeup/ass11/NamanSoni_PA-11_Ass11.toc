@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objectives}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textit {Vulnerability Assessment}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textit {How Nessus Works}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Platform}}{3}{}%
+\contentsline {section}{\numberline {5}\textbf {Conclusion}}{3}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ's}}{3}{}%
+\contentsline {subsection}{\numberline {6.1}\textit {What vulnerabilities can Nessus detect?}}{3}{}%
+\contentsline {subsection}{\numberline {6.2}\textit {What are the limitations of Nessus essentials?}}{3}{}%
+\contentsline {subsection}{\numberline {6.3}\textit {How can you identify a false positive vulnerability in Nessus?}}{3}{}%
+\contentsline {subsection}{\numberline {6.4}\textit {How many hosts can Nessus scan? What port does Nessus use?}}{4}{}%
