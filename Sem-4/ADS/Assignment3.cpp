@@ -5,7 +5,7 @@ using namespace std;
 
 class wordnode
 {
-    char data[10];
+    char data[10]; 
     wordnode *left;
     wordnode *right;
     friend class tree;
@@ -50,4 +50,4 @@ do
         }
     }
     cout <<
-}
+} =
