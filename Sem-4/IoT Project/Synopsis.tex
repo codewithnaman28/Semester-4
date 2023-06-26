@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+    { % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Internet of Things}\\[2\baselineskip] % Title
+		{\large\textit{Synopsis}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10\\
+        Sahaj Mishra Roll No.29\\
+        Sayam Saboo Roll No. 30\\
+        Gaurav Choudhary Roll No. 21\\
+        Pratyush Choudhary Roll No. 17}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+
+\end{titlepage}
+\begin{center}
+    \large\underline{{\textbf{\textit{\bfseries Synopsis: IoT Based Smart Energy Management System}}}}\\[0.5\baselineskip]
+\end{center}
+Smart Energy Management System for IoT is a project aimed at developing an intelligent energy management system that can effectively monitor, control and optimize energy consumption in smart homes, buildings, and industries. The system will use Internet of Things (IoT) devices such as smart meters, sensors, and actuators to collect and analyze energy data, and then make intelligent decisions to manage energy usage and reduce waste.\\
+
+The project will involve the integration of several technologies such as machine learning, artificial intelligence, and cloud computing to create an intelligent system that can learn from past energy usage patterns and make predictions on future energy demand. The system will also enable users to remotely monitor their energy consumption, set energy usage targets and receive alerts when they exceed their energy budget.\\
+
+The proposed system will offer several benefits, including reducing energy waste, lowering energy bills, increasing energy efficiency, and reducing carbon emissions. It will be designed to be user-friendly and easily deployable, with minimal installation requirements, making it accessible to a wide range of users.\\
+
+Overall, the Smart Energy Management System for IoT project will provide an innovative and effective solution for managing energy consumption, thereby contributing to a more sustainable and energy-efficient future.
+\section*{\textit{Hardware Components}}
+\begin{itemize}
+    \item IoT sensors (e.g., smart plugs, current sensors)
+    \item Wi-Fi modules (e.g., ESP8266)
+    \item Microcontroller (e.g., Arduino Uno)
+    \item Power source (e.g., batteries or AC power)
+\end{itemize}
+\section*{\textit{Software Components}}
+\begin{itemize}
+    \item Arduino IDE
+    \item MQTT protocol
+    \item Cloud-based server (e.g., AWS or Azure)
+    \item Data visualization tool (e.g., Grafana)
+\end{itemize}
+\section*{\textit{Steps}}
+\begin{itemize}
+    \item Install IoT sensors on electrical devices such as air conditioners, lights, and refrigerators to collect real-time energy usage data.
+    \item Connect the sensors to the microcontroller using Wi-Fi modules.
+    \item Write code in Arduino IDE to read sensor data and use the MQTT protocol to send data to the cloud-based server.
+    \item Set up a cloud-based server to receive and process sensor data. This server can also store historical data and generate alerts when energy consumption exceeds a certain threshold.
+    \item Use a data visualization tool like Grafana to display the data in a dashboard that shows energy consumption, location of devices, and other relevant information.
+    \item Analyze the data to identify patterns and trends in energy consumption, and use machine learning algorithms to predict future energy usage.
+    \item Develop algorithms to control energy consumption based on the data and insights gathered. This could include automatically turning off lights or air conditioning when they are not in use or adjusting temperature settings based on occupancy.
+\end{itemize}
+\section*{\textit{Expected Outcomes}}
+\begin{itemize}
+    \item Reduced energy consumption and costs
+    \item Improved efficiency and sustainability
+    \item Real-time monitoring and reporting of energy usage
+    \item Better allocation of resources based on data-driven insights
+\end{itemize}
+\section*{\textit{Possible Extensions}}
+\begin{itemize}
+    \item Incorporating renewable energy sources such as solar panels or wind turbines to the system.
+    \item Integrating with smart home automation systems to control energy usage based on occupancy and user preferences.
+\end{itemize}
+\section*{\textit{Objectives}}
+\section*{\textit{Block Diagrams}}
+\end{document}

@@ -1,0 +1,232 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[breaklinks]{hyperref}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+	{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Internet of Things}\\[2\baselineskip] % Title
+		{\large\textit{Mini-project Report on Smart Street Lighting System}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10\\
+        Sahaj Mishra Roll No.29\\
+        Sayyam Saboo Roll No. 30\\
+        Gaurav Choudhary Roll No. 21\\
+        Pratyush Chowdhury Roll No. 17}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+	
+\end{titlepage}
+\tableofcontents
+\pagebreak
+% \section*{Index Table}
+% \begin{itemize}
+%     \item Acknowledgement
+%     \item Abstract
+%     \item List of Figures
+%     \item List of Tables
+%     \item Contents
+% \end{itemize}
+\section{\textbf{Introduction}}
+\subsection{\textit{Problem Statement}}
+Traditional public lighting systems are often inefficient, costly to maintain, and have a high carbon footprint. The lack of real-time data can make it difficult to identify and resolve problems quickly, resulting in areas with inadequate lighting, which can compromise safety. Therefore, the need for a Smart Road Light Management System arises to automate the functioning of public lighting systems, optimize energy usage, reduce maintenance costs, and improve safety and sustainability.
+\subsection{\textit{Need for the mini-project}}
+The need for this mini-project is to provide a practical demonstration of a Smart Road Light Management System, showcasing its capabilities and benefits. The project will help in understanding the various components of the system, such as sensors, data analytics, and communication networks, and how they work together to optimize energy usage and improve the safety and sustainability of public lighting systems. Additionally, the project will provide hands-on experience in designing and implementing a smart system, which can be useful for further research and development in this field.
+\section{\textbf{Smart Street Light Management System}}
+\subsection{\textit{Overview of the system}}
+The Smart Road Light Management System is a smart system designed to optimize the functioning of public lighting systems. It uses advanced technologies such as sensors, data analytics, and communication networks to automate the management of the lighting system, reduce energy consumption, and minimize maintenance costs. The system can adjust the brightness of the lights based on traffic conditions, weather conditions, and other factors, and provide real-time data about the functioning of the lighting system to enable authorities to identify and resolve problems quickly. The Smart Road Light Management System can improve safety, reduce costs, and increase the sustainability of public lighting systems.
+\subsection{\textit{System Architecture}}
+The architecture of a Smart Road Light Management System typically consists of the following components:
+\begin{enumerate}
+    \item \textbf{Sensors:} These are devices that collect data about the environment, such as traffic volume, weather conditions, and ambient light levels. The sensors used in a Smart Road Light Management System include Infrared Sensors, Ultrasonic Sensors, and Current Sensor.
+    \item \textbf{Raspberry Pi:} This is a credit card-sized computer that can be used as the brain of the system. It can connect to various sensors, collect data, and control the functioning of the lighting system.
+\end{enumerate}
+\subsection{\textit{Features of the system}}
+Features of the Smart Street Light Management System are:
+\begin{itemize}
+    \item \textbf{Intelligent control:} The system can automatically adjust the brightness of the lights based on the traffic and weather conditions detected by the sensors. For example, if the traffic volume is low, the system can reduce the brightness of the lights to save energy.
+    \item \textbf{Real-time monitoring:} The system can provide real-time data about the functioning of the lighting system, such as the current consumption and the status of each light. This data can be used to identify and resolve problems quickly.
+    \item \textbf{Fault detection:} The system can use current sensors to detect faults in the lighting system, such as a burned-out bulb or a faulty circuit. This information can be used to schedule maintenance or repairs.
+    \item \textbf{Energy optimization:} The system can use ultrasonic sensors to detect the presence of moving objects, such as cars or pedestrians. The system can turn on the lights in their vicinity and turn them off when they leave, thus saving energy.
+    \item \textbf{Sustainability:} The system can help reduce the carbon footprint of public lighting systems by optimizing energy usage and reducing maintenance costs. This can contribute to the sustainability of the environment.
+\end{itemize}
+\section{\textbf{Circuit Diagram}}
+\begin{center}
+    \includegraphics*[scale = 0.6]{Circuit_Diagram.png}
+\end{center}
+\section{\textbf{Project Description}}
+\subsection{\textit{Explanation of the Project}}
+Sure, here's an explanation of how a Smart Road Light Management System can use the infrared sensor, ultrasonic sensor, and current sensor:
+\begin{enumerate}
+    \item \textbf{Infrared Sensor: (IR-08H)} The infrared sensor can detect the ambient light level and adjust the brightness of the lights accordingly. For example, if the ambient light level is low, the system can increase the brightness of the lights to ensure visibility and safety.
+    \item \textbf{Ultrasonic Sensor: (HC-SR04)} The ultrasonic sensor can detect the presence of moving objects, such as cars or pedestrians, and turn on the lights in their vicinity. This can improve safety and reduce energy usage by turning on only the necessary lights, rather than keeping all the lights on all the time.
+    \item \textbf{Current Sensor: (Ina219)} The current sensor can detect the current consumption of each light, enabling the system to identify and resolve problems quickly. For example, if a light is consuming more current than usual, it may indicate a problem with the bulb or the circuit, which can be fixed before it causes a complete failure.
+\end{enumerate}
+The system uses Raspberry Pi as the brain of the system, which can connect to these sensors, collect data, and control the functioning of the lighting system. Raspberry Pi communicates with the controllers, such as relays or solid-state switches, to turn on or off the lights based on the data collected from the sensors. The system can also use cloud-based servers to store and process the data, and provide a web-based user interface for users to interact with the system.\\
+
+Overall, a Smart Road Light Management System that uses the infrared sensor, ultrasonic sensor, and current sensor can provide an intelligent and automated control of public lighting systems, optimizing energy usage, improving safety, and reducing maintenance costs.
+\subsection{\textit{Code for the Project}}
+% \begin{center}
+%     \includegraphics*[scale = 0.14]{code.png}
+% \end{center}
+\begin{lstlisting}[language=Python]
+import RPi.GPIO as GPIO
+import time
+import board
+import busio
+import math
+
+from adafruit_ina219 import ADCResolution, BusVoltageRange, INA219
+from datetime import datetime
+
+# Pin layout
+GPIO.setmode(GPIO.BCM)
+led_pins = [21, 16, 20]
+ir_pins = [5, 6, 13]
+trigger = 4
+echo = 17
+
+# INA219 setup
+i2c_bus = busio.I2C(board.SCL, board.SDA)
+ina = INA219(i2c_bus)
+ina.bus_adc_resolution = ADCResolution.ADCRES_12BIT_32S
+ina.shunt_adc_resolution = ADCResolution.ADCRES_12BIT_32S
+ina.bus_voltage_range = BusVoltageRange.RANGE_16V
+
+# GPIO setup
+leds_pwm = []
+for led_pin in led_pins:
+    GPIO.setup(led_pin, GPIO.OUT)
+    led_pwm = GPIO.PWM(led_pin, 100)  # 100 Hz frequency
+    led_pwm.start(0)
+    leds_pwm.append(led_pwm)
+
+for ir_pin in ir_pins:
+    GPIO.setup(ir_pin, GPIO.IN)
+
+GPIO.setup(trigger, GPIO.OUT)
+GPIO.setup(echo, GPIO.IN)
+
+def measure_distance():
+    GPIO.output(trigger, True)
+    time.sleep(0.00001)
+    GPIO.output(trigger, False)
+
+    start_time = time.time()
+    end_time = time.time()
+
+    while GPIO.input(echo) == 0:
+        start_time = time.time()
+
+    while GPIO.input(echo) == 1:
+        end_time = time.time()
+
+    distance = (end_time - start_time) * 17150
+    return distance
+
+try:
+
+    while True:
+        distance = measure_distance()
+        ir_status = [GPIO.input(ir_pin) for ir_pin in ir_pins]
+
+        if distance > 49:
+            led_intensity = [20, 20, 20]
+            #led_pwm.ChangeDutyCycle(led_intensity[0])
+            #led_pwm.ChangeDutyCycle(led_intensity[1])
+            #led_pwm.ChangeDutyCycle(led_intensity[2])
+
+        elif 30 < distance <= 49:
+            led_intensity = [20, 20, 100]
+            #led_pwm.ChangeDutyCycle(led_intensity[0])
+            #led_pwm.ChangeDutyCycle(led_intensity[1])
+            #led_pwm.ChangeDutyCycle(led_intensity[2])
+            
+        elif 15 < distance <= 30:
+            led_intensity = [100, 20, 20]
+            #led_pwm.ChangeDutyCycle(led_intensity[0])
+            #led_pwm.ChangeDutyCycle(led_intensity[1])
+            #led_pwm.ChangeDutyCycle(led_intensity[2])    
+            
+        else:
+            led_intensity = [100, 100, 100]
+            #led_pwm.ChangeDutyCycle(led_intensity[0])
+            #led_pwm.ChangeDutyCycle(led_intensity[1])
+            #led_pwm.ChangeDutyCycle(led_intensity[2])
+
+        for i, led_pwm in enumerate(leds_pwm):
+            if ir_status[i] == 0:
+                led_pwm.ChangeDutyCycle(led_intensity[i])
+            else:
+                led_pwm.ChangeDutyCycle(0)
+
+        energy_consumption = abs((ina.current ) * ina.bus_voltage) * 10
+        print("Energy consumption: {:.2f} mJ".format(energy_consumption))
+
+        working_lights = [i for i, status in enumerate(ir_status) if status == 0]
+        print("Working lights: {}".format(working_lights))
+        time.sleep(1)
+        
+except KeyboardInterrupt:
+    for led_pwm in leds_pwm:
+        led_pwm.stop()
+    GPIO.cleanup()
+\end{lstlisting}
+\section{\textbf{Conclusion}}
+\subsection{\textit{Summary for the Project}}
+The Smart Road Light Management System is a mini-project that aims to provide an intelligent and automated control of public lighting systems, using Raspberry Pi as the brain of the system. The system uses infrared sensors to detect ambient light levels and adjust the brightness of the lights, ultrasonic sensors to detect the presence of moving objects and turn on the lights in their vicinity, and current sensors to detect the current consumption of each light and identify faults. The system can provide real-time monitoring, fault detection, energy optimization, and sustainability, contributing to the safety, efficiency, and sustainability of public lighting systems.
+\subsection{\textit{Future Scope for the Project}}
+The Smart Road Light Management System has significant potential for future development and expansion. Here are some potential future prospects for the project:
+\begin{enumerate}
+    \item \textbf{Integration with other IoT systems:} The system can be integrated with other IoT systems, such as traffic management systems, weather monitoring systems, and air quality monitoring systems. This can provide a more comprehensive and intelligent control of public infrastructure and services.
+    \item \textbf{Artificial Intelligence and Machine Learning:} The system can use artificial intelligence and machine learning algorithms to analyze the data collected by the sensors, and optimize the functioning of the lighting system. For example, the system can learn from past data to predict future traffic patterns and adjust the lighting accordingly.
+    \item \textbf{Smart City Development:} The system can be a part of a larger Smart City development initiative, which aims to provide an intelligent and sustainable infrastructure for cities. This can include the integration of other IoT systems, such as smart waste management systems, smart public transport systems, and smart building management systems.
+    \item \textbf{Energy Storage and Renewables:} The system can be integrated with energy storage systems, such as batteries or capacitors, to store excess energy generated by the lighting system during low traffic hours. The system can also be integrated with renewable energy sources, such as solar or wind power, to reduce reliance on the grid.
+\end{enumerate}
+Overall, the Smart Road Light Management System has the potential to evolve and expand, contributing to the development of smart and sustainable cities. The system can provide a more efficient, safe, and sustainable infrastructure for public lighting systems, and serve as a foundation for future IoT systems and technologies.
+\section{\textbf{References}}
+The refrences used in the mini-project are as follows:
+\begin{enumerate}
+    \item \url{https://www.researchgate.net/publication/348096383_Smart_Street_Lighting_System}
+    \item \url{https://www.academia.edu/30160239/Street_light_system}
+    \item \url{https://www.google.com/url?sa=t&source=web&rct=j&url=https://agartalacity.tripura.gov.in/sites/default/files/PPT-on-LED-Project-in-Agartala-City.ppt&ved=2ahUKEwi9z4uWvOb-AhWGVmwGHQ3yAO84ChAWegQIBBAB&usg=AOvVaw2-EhXKy-xqRQd5h8FOuxft}
+    \item \url{https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.ijert.org/research/a-study-on-iot-based-smart-street-light-systems-IJERTCONV8IS07004.pdf&ved=2ahUKEwj2oJCtvOb-AhViSGwGHYSbAK8QFnoECDUQAQ&usg=AOvVaw1Wa2ZfX81YKrwVnLFnaSng}
+    \item \url{https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.ijrti.org/papers/IJRTI1704018.pdf&ved=2ahUKEwiFu9jIvOb-AhXeT2wGHclSBPw4ChAWegQIIxAB&usg=AOvVaw1oKeuayHXVIRVlUgQaTrB0}
+\end{enumerate}
+\end{document}
