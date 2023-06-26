@@ -1,0 +1,506 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+	\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+		
+		\raggedleft\rule{1pt}{\textheight} % Vertical line
+		\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+		\parbox[b]{0.75\textwidth}
+		{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+			
+			{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Advanced Data Structures}\\[2\baselineskip] % Title
+			{\large\textit{Assignment 2}}\\[4\baselineskip] % Subtitle or further description
+			{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+			
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+		
+	\end{titlepage}
+	\tableofcontents
+	\pagebreak
+\section{\textbf{Problem Statement}}
+Implement binary tree using C++ and perform following operations: Creation of binary tree and traversal (recursive and non- recursive).
+\section{\textbf{Objective}}
+	\begin{enumerate}
+		\item To study data structure : Tree and Binary Tree.
+		\item To study different traversals in Binary Tree
+		\item To study recursive and non-recursive approach of programming
+	\end{enumerate}
+\section{\textbf{Theory}}
+\subsection{\textit{Trees}}
+Trees are a type of data structure used to represent hierarchical relationships between elements. In computer science, trees are often used to represent hierarchical relationships between elements such as files and directories in a file system, or in the representation of a decision tree for machine learning algorithms.\\
+
+A tree consists of nodes, which are connected by edges. Each node in a tree has zero or more child nodes, and a single parent node, except for the root node, which has no parent. The root node is the topmost node in the tree, and all other nodes are descended from it. Nodes that have no children are called leaf nodes.\\
+
+Trees have several important properties, such as being able to represent hierarchical relationships efficiently, supporting searching, insertion, and deletion operations in logarithmic time, and being able to be easily traversed and manipulated.\\
+
+There are several different types of trees, such as binary trees, AVL trees, B-trees, and heap trees, each with its own unique properties and uses.
+\subsection{\textit{Different definitions related to binary tree}}
+In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child. Some common definitions related to binary trees are:
+\begin{itemize}
+	\item Root: The topmost node in a binary tree is called the root. It has no parent node.
+	\item Leaf: A node that has no children is called a leaf node.
+	\item Parent: A node that has one or more child nodes is called a parent node.
+	\item Child: A node that is a direct descendant of a parent node is called a child node.
+	\item Siblings: Nodes that have the same parent are called siblings.
+	\item Depth: The depth of a node is the number of edges from the root node to that node.
+	\item Height: The height of a binary tree is the number of edges from the root node to the deepest leaf node.
+	\item Subtree: The set of nodes and edges that are descendants of a given node is called a subtree.
+	\item Full binary tree: A binary tree is considered full if every node has either 0 or 2 children.
+	\item Perfect binary tree: A binary tree is considered perfect if all its leaf nodes are at the same depth and every parent node has exactly two children.
+\end{itemize}
+\subsection{\textit{Different Traversals (Inorder, Preorder and Postorder)}}
+\begin{enumerate}
+	\item Inorder traversal: In an inorder traversal, the left subtree of a node is visited first, then the node itself, and finally the right subtree. This results in visiting the nodes in ascending order if the tree is used to represent an ordered set.
+	\item Preorder traversal: In a preorder traversal, the node itself is visited first, then the left subtree, and finally the right subtree. This is useful for creating a copy of the tree or for creating an output that represents the structure of the tree.
+	\item Postorder traversal: In a postorder traversal, the left subtree is visited first, then the right subtree, and finally the node itself. This is useful for freeing up memory in a tree-like data structure, as the children can be deleted before the parent.
+\end{enumerate}
+\section{\textbf{Implementation}}
+\subsection{\textit{Platform}}
+\textbf{Operating System:}Mac OS 64-bit\\
+\textbf{IDE Used:} Visual Studio Code\\
+\subsection{\textit{Test Conditions}}
+\begin{enumerate}
+	\item Input at least 10 nodes.
+	\item Display all traversals of binary tree with 10 nodes. (recursive and non-recursive)
+\end{enumerate}
+\subsection{\textit{Input-Output Code}}
+\begin{lstlisting}[language=C++, caption={Input}]
+	#include <iostream>
+	using namespace std;
+	class treenode {
+		public : 
+		string data;
+		treenode *left;
+		treenode *right;
+		friend class tree;
+	};
+	class stack{
+		int top;
+		treenode *data [30];
+		public:
+		stack()
+		{
+			top=-1;
+		}
+		void push (treenode *temp)
+		{
+			top++;
+			data[top] = temp;
+		}
+		treenode*pop()
+		{
+			return data[top--];
+		}
+		int isempty(){
+			if (top == -1)
+			{
+				return 1;
+			}
+			else 
+			{
+				return 0;
+			}
+		}
+		friend class tree;
+	};
+	
+	class tree {
+		public:
+		treenode *root;
+		tree(){
+			root = NULL;
+		}
+		void create_r()
+		{
+			root = new treenode;
+			cout<<"Enter ROOT Data:"<<endl;
+			cin>>root->data;
+			root->left = NULL;
+			root->right = NULL;
+			create_r(root);
+		}
+		
+		void create_r(treenode * temp){
+			char choice1, choice2;
+			cout << "Enter whether you want to add the data to the left of \""<< temp->data <<"\" or not (y/n): ";
+			cin >> choice1;
+			if (choice1 == 'y'){
+				treenode *curr1 = new treenode();
+				cout << "Enter the data for the left of \""<< temp->data << "\" node: ";
+				cin >> curr1 -> data;
+				temp -> left = curr1;
+				create_r(curr1);
+			}
+			cout << "Enter whether you want to add the data to the right of \""<<temp->data<<"\" or not (y/n): ";
+			cin >> choice2;
+			if (choice2 == 'y'){
+				treenode *curr2 = new treenode();
+				cout << "Enter the data for the Right of \""<< temp->data <<"\" node:";
+				cin >> curr2 -> data;
+				temp -> right = curr2;
+				create_r(curr2);
+				
+			}
+		}
+		//inorder recursive
+		void inorder_traversal_r (treenode * node){
+			if (node == NULL){
+				return;
+			}
+			inorder_traversal_r(node->left);
+			cout << node->data << "\n";
+			inorder_traversal_r(node->right);
+		}
+		//preorder recursive
+		void preorder_traversal_r(treenode* temp)
+		{
+			if (temp!= NULL)
+			{
+				cout<< temp->data << endl;
+				preorder_traversal_r(temp->left);
+				preorder_traversal_r(temp->right);
+			}
+		}
+		// postorder recursive
+		void postorder_traversal_r(treenode*temp)
+		{
+			if(temp!=NULL)
+			{
+				postorder_traversal_r(temp->left);
+				postorder_traversal_r(temp->right);
+				cout<<temp->data<<endl;
+			}
+		}
+		//Inorder Non recursive
+		void inorder_traversal_non_recursive(treenode*temp)
+		{
+			temp =root;
+			stack st;
+			while (1)
+			{
+				while(temp!=NULL)
+				{
+					st.push(temp);
+					temp = temp->left;
+				}
+				if(st.isempty()==1)
+				{
+					break;
+				}
+				temp=st.pop();
+				cout<< temp->data<<endl;
+				temp = temp->right;
+			}
+		}
+		
+		//Postorder non recursive
+		void postorder_traversal_non_recursive(treenode*temp)
+		{
+			temp = root;
+			stack st;
+			while(1)
+			{
+				while(temp!=NULL)
+				{
+					st.push(temp);
+					temp = temp->left;
+				}
+				if (st.data[st.top]->right == NULL)
+				{
+					temp=st.pop();
+					cout<<temp->data<<endl;
+				}
+				while(st.isempty()==0 && st.data[st.top]->right==temp)
+				{
+					temp=st.pop();
+					cout<<temp->data;
+				}
+				if (st.isempty()==1)
+				{
+					break;
+				}
+				temp = st.data[st.top]->right;
+			}
+		}
+		
+		//Preorder Non recursive
+		void preorder_traversal_non_recursive(treenode*temp)
+		{
+			temp = root;
+			stack st;
+			while(1)
+			{
+				while(temp!=NULL)
+				{
+					cout<<temp->data<<endl;
+					st.push(temp);
+					temp =temp->left;
+				}
+				if(st.isempty()==1)
+				{
+					break;
+				}
+				temp=st.pop();
+				temp = temp->right;
+			}
+		}
+	};
+	/*Test cases
+	1. left skewed 
+	2. Right skewed
+	3. Complete Tree
+	4. Full tree
+	5. Normal Tree
+	6. Binary search Tree
+	*/
+	int main() {
+		tree bt;
+		// treenode * root = new treenode();
+		// cout << "Enter the data for the root node: ";
+		// cin >> root -> data;
+		int ch;
+		char c;
+		do {
+			
+			cout<<"\nWhat you want to do:\n1.Enter Tree\n2.Inorder Recursive\n3.Preorder Recursive\n4.Postorder Recursive\n5.Inorder Non Recursive\n6.Preorder Non Recursive\n7.Postorder Non Recursive\nchoose:"<<endl;
+			cin>>ch;
+			switch (ch)
+			{
+				case 1:
+				bt.create_r();
+				break;
+				case 2:
+				cout << "The inorder display of the tree is: " << endl;	
+				bt.inorder_traversal_r(bt.root);
+				break;
+				case 3:
+				cout<<"The preorder display of the tree is:" << endl;
+				bt.preorder_traversal_r(bt.root);
+				break;
+				case 4:
+				cout<<"The postorder display of the tree is:"<<endl;
+				bt.postorder_traversal_r(bt.root);
+				break;
+				case 5:
+				cout<<"The Inorder Non Recursive Display of the tree is:"<<endl;
+				bt.inorder_traversal_non_recursive(bt.root);
+				break;
+				case 6: 
+				cout<<"The Preorder Non Recursive Display of the tree is:"<<endl;
+				bt.preorder_traversal_non_recursive(bt.root);
+				break;
+				case 7:
+				cout<<"The Postorder Non Recursive Display of the tree is:"<<endl;
+				bt.postorder_traversal_non_recursive(bt.root);
+				break;
+				default:
+				cout<<"Invalid choice";
+				break;
+			}
+			
+			cout << "Do you want to continue(y/n):";
+			cin>> c;
+		}while (c == 'y');
+		
+		
+		return 0;
+	}
+\end{lstlisting}
+\begin{lstlisting}[caption = output]
+	What you want to do:
+1. Enter Tree 
+2.Inorder Recursive
+3.Preorder Recursive 
+4.Postorder Recursive
+5.Inorder Non Recursive 
+6.Preorder Non Recursive
+7.Postorder Non Recursive 
+choose:
+1
+
+Enter ROOT Data:
+1
+Enter whether you want to add the data to the left of "1" or not (y/n):  y
+Enter the data for the left of "1" node: 2
+Enter whether you want to add the data to the left of "2" or not (y/n):  y
+Enter the data for the left of "2" node: 3
+Enter whether you want to add the data to the left of "3" or not (y/n):  y
+Enter the data for the left of "3" node: 4
+Enter whether you want to add the data to the left of "4" or not (y/n): y 
+Enter the data for the left of "4" node: 5
+Enter whether you want to add the data to the left of "5" or not (y/n):  n
+Enter whether you want to add the data to the right of "5" or not (y/n): n 
+Enter whether you want to add the data to the right of "4" or not (y/n): n
+Enter whether you want to add the data to the right of "3" or not (y/n): n 
+Enter whether you want to add the data to the right of "2" or not (y/n): n
+Enter whether you want to add the data to the right of "1" or not (y/n): n
+
+Do you want to continue(y/n): y
+
+What you want to do: 
+1. Enter Tree
+2.Inorder Recursive 
+3.Preorder Recursive
+4.Postorder Recursive 
+5.Inorder Non Recursive
+6.Preorder Non Recursive 
+7.Postorder Non Recursivechoose: 
+2
+The inorder display of the tree is: 
+5 4 3 2 1 
+Do you want to continue(y/n): y
+
+What you want to do: 
+1. Enter Tree
+2.Inorder Recursive
+3.Preorder Recursive 
+4.Postorder Recursive
+5.Inorder Non Recursive 
+6.Preorder Non Recursive
+7.Postorder Non Recursive 
+choose:
+3
+The preorder display of the tree is:
+1 2 3 4 5
+Do you want to continue(y/n): y
+
+What you want to do:
+1. Enter Tree 
+2.Inorder Recursive
+3.Preorder Recursive 
+4.Postorder Recursive
+5.Inorder Non Recursive 
+6.Preorder Non Recursive
+7.Postorder Non Recursive 
+choose:
+4
+The postorder display of the tree is:
+5 4 3 2 1
+Do you want to continue(y/n): y
+
+What you want to do:
+1. Enter Tree 
+2.Inorder Recursive
+3.Preorder Recursive 
+4.Postorder Recursive
+5.Inorder Non Recursive 
+6.Preorder Non Recursive
+7.Postorder Non Recursive 
+choose:
+5
+The Inorder Non Recursive Display of the tree is: 
+5 4 3 2 1
+Do you want to continue(y/n): y
+
+What you want to do: 
+1. Enter Tree
+2.Inorder Recursive 
+3.Preorder Recursive
+4.Postorder Recursive 
+5.Inorder Non Recursive
+6.Preorder Non Recursive 
+7.Postorder Non Recursive
+choose:
+ 6
+The Preorder Non Recursive Display of the tree is: 
+1 2 3 4 5
+Do you want to continue(y/n): y
+
+What you want to do: 
+1. Enter Tree
+2.Inorder Recursive 
+3.Preorder Recursive
+4.Postorder Recursive 
+5.Inorder Non Recursive
+6.Preorder Non Recursive 
+7.Postorder Non Recursive
+choose: 
+7
+The Postorder Non Recursive Display of the tree is: 
+5 4 3 2 1
+Do you want to continue(y/n): n
+\end{lstlisting}
+\section{\textbf{Conclusion}}
+Thus, implemented different operations on CLL.
+\section{\textbf{FAQ's}}
+\begin{enumerate}
+	\item  Explain any one application of binary tree with suitable example.\\
+	
+	\textbf{Ans.} One common application of binary trees is in the implementation of search algorithms, such as binary search.\\
+	
+	In a binary search algorithm, a sorted list of elements is represented as a binary tree, with the value of the root node being the middle element of the list. If the value being searched for is less than the root node, the search continues in the left subtree. If the value being searched for is greater than the root node, the search continues in the right subtree. This process continues recursively until the value is found or it is determined that the value is not in the list.\\
+	
+	For example, consider the following sorted list of integers: [2, 5, 7, 9, 12, 15, 20]. To perform a binary search for the value 12, we can represent the list as a binary tree as follows:
+		\begin{lstlisting}[language=C++, caption = Example]
+			      12
+			     /  \
+		    	7   15
+		    	/ \   /
+			  5   9 20
+		   	/
+		  2
+		\end{lstlisting}
+	Starting at the root node, 12, we see that the value 12 is equal to the root node, so the search is successful and we return the index of the node. If we were searching for the value 7, we would follow the left subtree and continue the search, until we find the node with value 7 and return its index.
+	\item Explain sequential representation of binary tree with example.\\
+	
+	\textbf{Ans.} A binary tree can be represented in a sequential manner, also known as an array representation, where the tree nodes are stored in an array in a specific order. This representation is commonly used when implementing binary trees in programming languages.\\
+	
+	In the sequential representation, the root node is stored at the first position in the array (index 0), and its children are stored at the next two positions (index 1 and 2). The children of the node at position i are stored at positions 2i + 1 and 2i + 2, where i is the index of the node.\\
+	
+	Here is an example of a binary tree and its sequential representation:
+		\begin{lstlisting}[language=C++, caption = Example]
+  18
+  /  \
+			     15    30
+			    / \         / \
+			40 50 100 40
+		\end{lstlisting}
+	Array representation: [18, 15, 30, 40, 50, 100, 40]\\
+	
+	In this example, the root node 18 is stored at index 0, its left child 15 is stored at index 1, and its right child 30 is stored at index 2. The left child of 15 is stored at index 3, the right child of 15 is stored at index 4, the left child of 30 is stored at index 5, and the right child of 30 is stored at index 6.\\
+	
+	This sequential representation allows us to access the nodes of the binary tree in an efficient manner, as we can calculate the position of a node's children and parent based on its index in the array.
+	
+	\item Write inorder, preorder and postorder for following tree.\\
+	
+	\textbf{Ans.}  
+		\begin{itemize}
+			\item Inorder of the tree is: 8 40 7 15 9 50 18 100 30 40
+			\item Postorder of the tree is: 8 7 40 9 50 15 100 40 30 18
+			\item Preorder of the tree is: 18 15 40 8 7 50 9 30 100 40
+		\end{itemize} 
+\end{enumerate}
+
+\end{document}

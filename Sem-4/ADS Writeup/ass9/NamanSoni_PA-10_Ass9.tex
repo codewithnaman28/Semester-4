@@ -1,0 +1,187 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+	{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Advanced Data Structures}\\[2\baselineskip] % Title
+		{\large\textit{Assignment 9}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+	
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Problem Statement}}
+A Dictionary stores keywords &amp; its meaning. Provide facility for adding new keywords, deleting
+keywords, updating values of any entry. Provide facility to display whole data sorted in
+ascending/ Descending order. Also find how many maximum comparisons may require for
+finding any keyword. Use Height balance tree and find the complexity for finding a keyword.
+\section{\textbf{Objective}}
+\begin{itemize}
+    \item To study the concept of AVL trees
+    \item To study different rotations applied on AVL tree
+\end{itemize}
+\section{\textbf{Theory}}
+\subsection{\textbf{What is AVL tree?}}
+AVL tree is a self-balancing binary search tree that was named after its inventors, Adelson-Velskii and Landis. It is a height-balanced binary search tree, which means that the height of the left and right subtrees of any node differs by at most one. The balance factor of a node is defined as the difference between the height of its left and right subtrees. If the balance factor of a node is greater than 1 or less than -1, the tree is considered unbalanced and needs to be rebalanced.\\
+
+AVL tree supports efficient insertion, deletion, and lookup operations, with a worst-case time complexity of O(log n), where n is the number of nodes in the tree. This makes AVL tree a suitable data structure for applications that require frequent data manipulation and searching.\\
+
+The self-balancing feature of AVL tree is achieved through rotations, which are operations that modify the tree structure while maintaining the search tree property and balance factor. There are four types of rotations that can be performed on an AVL tree: left-rotation, right-rotation, left-right-rotation, and right-left-rotation. These rotations are used to balance the tree and maintain the height balance property.\\
+
+AVL tree has a few advantages over other self-balancing binary search trees, such as red-black tree. AVL tree provides faster search and insertion operations, but has a slightly slower deletion operation. Red-black tree, on the other hand, provides faster deletion operation, but has a slightly slower search and insertion operations.\\
+
+Overall, AVL tree is a powerful data structure that provides efficient searching and manipulation operations, and is suitable for applications that require frequent data modification and searching.
+\subsection{\textbf{Explain Different cases of AVL trees.}}
+In an AVL tree, the balance factor of a node is the difference between the height of its left and right subtrees. If the balance factor of a node is greater than 1 or less than -1, the tree is considered unbalanced and needs to be rebalanced. There are four cases of AVL trees that arise when a node is inserted or deleted, and the balance factor of one or more nodes becomes greater than 1 or less than -1. These cases are as follows:
+\begin{itemize}
+    \item Left-Left Case: In this case, the balance factor of a node A is greater than 1 and the balance factor of its left child B is also greater than 1. This means that the left subtree of A is taller than the right subtree, and the left subtree of B is taller than its right subtree. To rebalance the tree, we perform a right rotation on A to make B the new root of the subtree, and then perform a left rotation on B to restore the balance of the tree.
+    \item Right-Right Case: In this case, the balance factor of a node A is less than -1 and the balance factor of its right child B is also less than -1. This means that the right subtree of A is taller than the left subtree, and the right subtree of B is taller than its left subtree. To rebalance the tree, we perform a left rotation on A to make B the new root of the subtree, and then perform a right rotation on B to restore the balance of the tree.
+    \item Left-Right Case: In this case, the balance factor of a node A is greater than 1 and the balance factor of its left child B is less than -1. This means that the left subtree of A is taller than the right subtree, and the right subtree of B is taller than its left subtree. To rebalance the tree, we perform a left rotation on B to make its right child C the new root of the subtree, and then perform a right rotation on A to make C the new root of the subtree and restore the balance of the tree.
+    \item Right-Left Case: In this case, the balance factor of a node A is less than -1 and the balance factor of its right child B is greater than 1. This means that the right subtree of A is taller than the left subtree, and the left subtree of B is taller than its right subtree. To rebalance the tree, we perform a right rotation on B to make its left child C the new root of the subtree, and then perform a left rotation on A to make C the new root of the subtree and restore the balance of the tree.
+\end{itemize}
+By performing the appropriate rotations in each of these cases, we can maintain the balance of the AVL tree and ensure that the height of the tree is always logarithmic in the number of nodes.
+\subsection{\textbf{Construction of AVL trees and Data Structure used for creation.}}
+AVL trees are constructed using a recursive algorithm that inserts new nodes into the tree and ensures that the balance factor of each node is between -1 and 1. The algorithm works as follows:
+\begin{itemize}
+    \item Start with an empty AVL tree.
+    \item For each new node to be inserted, perform a standard binary search tree insertion.
+    \item After the new node is inserted, check the balance factor of its parent node. If the balance factor is greater than 1 or less than -1, the tree is unbalanced and a rotation needs to be performed.
+    \item Perform the appropriate rotation to rebalance the tree. There are four types of rotations: left rotation, right rotation, left-right rotation, and right-left rotation. The choice of rotation depends on the balance factor of the node and its children.
+    \item Recursively check the balance factor of the parent node of the current node and perform rotations if necessary.
+    \item Repeat steps 2 to 5 for all nodes to be inserted.
+\end{itemize}
+The data structure used for creating AVL trees is a linked list of nodes. Each node in the tree contains a key and a pointer to its left and right children. In addition, each node also contains the height of its left and right subtrees and the balance factor, which is the difference between the heights of the left and right subtrees.\\
+
+To implement the rotations, additional information such as the parent of each node is also stored in the node structure. This information is used to update the pointers of the rotated nodes and their ancestors.\\
+
+AVL trees are usually implemented using a self-balancing binary search tree library or module provided by the programming language. Many programming languages provide such libraries or modules, including C++, Java, Python, and many others. These libraries or modules provide efficient and optimized implementations of the AVL tree algorithms, making it easy to use AVL trees in various applications.
+\section{\textbf{Implementation}}
+\subsection{\textit{Platform}}
+\begin{itemize}
+	\item 64-bit Mac OS
+	\item Open Source C++ Programming tool like Visual Studio Code
+\end{itemize}
+subsection{\textit{Test Conditions}}
+\begin{enumerate}
+    \item Input min 10 elements.
+    \item Display Max and Min Heap
+    \item Find Maximum and Minimum marks obtained in a particular subject.
+\end{enumerate}
+\section{\textbf{Conclusion}}
+Thus, we have implemented various rotation on AVL trees
+\section{\textbf{FAQ's}}
+\subsection{\textit{Discuss AVL trees with suitable example?}}
+Sure, let's consider an example to understand how AVL trees work. Suppose we want to insert the following values into an empty AVL tree: 10, 20, 30, 40, 50, 60, and 70.
+
+Insert 10 into the empty tree. The tree now looks like this:
+\begin{lstlisting}
+    10
+
+\end{lstlisting}
+Insert 20 into the tree. The balance factor of the root node is now -1, which is within the range of -1 to 1. So, the tree remains balanced.
+\begin{lstlisting}
+    10
+     \
+     20
+  
+\end{lstlisting}
+Insert 30 into the tree. The balance factor of the root node is now -2, which is less than -1. So, the tree is unbalanced and we need to perform a rotation. In this case, we need to perform a left rotation on the root node to make 20 the new root of the subtree.
+\begin{lstlisting}
+    10
+     \
+     20
+       \
+       30
+
+\end{lstlisting}
+Insert 40 into the tree. The balance factor of the root node is now -2, which is less than -1. So, the tree is unbalanced and we need to perform a left rotation on the root node to make 30 the new root of the subtree.
+\begin{lstlisting}
+    10
+     \
+     30
+    /  \
+   20   40
+
+\end{lstlisting}
+Insert 50 into the tree. The balance factor of the root node is now -2, which is less than -1. So, the tree is unbalanced and we need to perform a left-right rotation on the root node. First, we perform a right rotation on the left child of the root (30) to make 40 the new root of the left subtree. Then, we perform a left rotation on the root (30) to make 40 the new root of the entire subtree.
+\begin{lstlisting}
+    10
+     \
+     40
+    /  \
+   30   50
+  /
+ 20
+
+\end{lstlisting}
+Insert 60 into the tree. The balance factor of the root node is now 2, which is greater than 1. So, the tree is unbalanced and we need to perform a right rotation on the root node to make 40 the new root of the subtree.
+\begin{lstlisting}
+     30
+    /  \
+   20   40
+          \
+           50
+            \
+             60
+  
+\end{lstlisting}
+Insert 70 into the tree. The balance factor of the root node is now 2, which is greater than 1. So, the tree is unbalanced and we need to perform a right-left rotation on the root node. First, we perform a left rotation on the right child of the root (40) to make 50 the new root of the right subtree. Then, we perform a right rotation on the root (30) to make 50 the new root of the entire subtree.
+\begin{lstlisting}
+     40
+    /  \
+   30   50
+  /    /  \
+ 20   45   60
+            \
+             70
+
+\end{lstlisting}
+Now, we have successfully inserted all the values into the AVL tree and ensured that the balance factor of each node is between -1 and 1. The height of the AVL tree is now logarithmic in the number of nodes, which ensures efficient searching, insertion, and deletion operations.
+\subsection{\textit{Compute the time complexity of AVL tree creation?}}
+The time complexity of creating an AVL tree depends on the number of nodes being inserted.\\
+
+When inserting a new node, we need to perform a search to find the correct position for insertion, which takes O(log n) time in a balanced tree like an AVL tree. Once we find the correct position, we need to insert the node and adjust the balance factors of the nodes along the path from the root to the newly inserted node. This adjustment involves rotations, which also take O(log n) time.\\
+
+Therefore, the time complexity of creating an AVL tree with n nodes is O(n log n), since we need to perform O(log n) operations for each of the n nodes being inserted. This time complexity ensures that the AVL tree remains balanced and efficient for searching, insertion, and deletion operations.
+\end{document}

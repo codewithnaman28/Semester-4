@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}\textbf {Problem Statement}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objective}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textit {Trees}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textit {Different definitions related to binary tree}}{2}{}%
+\contentsline {subsection}{\numberline {3.3}\textit {Different Traversals (Inorder, Preorder and Postorder)}}{3}{}%
+\contentsline {section}{\numberline {4}\textbf {Implementation}}{3}{}%
+\contentsline {subsection}{\numberline {4.1}\textit {Platform}}{3}{}%
+\contentsline {subsection}{\numberline {4.2}\textit {Test Conditions}}{3}{}%
+\contentsline {subsection}{\numberline {4.3}\textit {Input-Output Code}}{3}{}%
+\contentsline {section}{\numberline {5}\textbf {Conclusion}}{8}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ's}}{9}{}%

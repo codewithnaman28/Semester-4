@@ -1,0 +1,248 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+    { % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Advanced Data Structures}\\[2\baselineskip] % Title
+		{\large\textit{Theory Assignment}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Explain AA Trees with an example.}}
+\textbf{Ans.} AA trees are a self-balancing binary search tree that were invented by Arne Andersson in 1993. They are similar to red-black trees and provide efficient average-case performance for a variety of operations, including search, insertion, and deletion.\\
+
+AA trees are balanced by enforcing two properties:
+\begin{itemize}
+    \item \textbf{Level property:} Every leaf node has the same level, which is the distance from the root.
+    \item \textbf{Skew property:} Every right child of a node has a level less than or equal to its parent, and every left child of a node has a level strictly less than its parent.
+\end{itemize}
+To maintain these properties, AA trees use two operations:
+\begin{itemize}
+    \item \textbf{Skew:} If a node has a right child whose level is the same as its own, rotate the node to the left so that its right child becomes its parent.
+    \item \textbf{Split:} If a node has two left children whose levels are the same, rotate the node to the right so that its left child becomes its parent, and then increment the level of the new right child.
+\end{itemize}
+Here's an example of an AA tree:
+\begin{lstlisting}
+      7
+    /   \
+   3     18
+  / \   /  \
+ 1   5 12  20
+       /  /  \
+      9  19  25
+
+\end{lstlisting}
+In this tree, every leaf node has the same level (4), and the skew property is satisfied because every right child has a level less than or equal to its parent, and every left child has a level strictly less than its parent.\\
+
+To perform an insertion, let's insert the value 15 into the tree. First, we traverse the tree as we would in a normal binary search tree until we find the appropriate location to insert the new node:
+\begin{lstlisting}
+      7
+    /   \
+   3     18
+  / \   /  \
+ 1   5 12  20
+       /  /  \
+      9  19  25
+
+Insert 15:
+      7
+    /   \
+   3     18
+  / \   /  \
+ 1   5 12  20
+       /  /  \
+      9  19  25
+           \
+           15
+
+\end{lstlisting}
+Now, we need to rebalance the tree to maintain the level and skew properties. We start by performing a skew operation on the new node's parent:
+\begin{lstlisting}
+      7
+    /   \
+   3     18
+  / \   /  \
+ 1   5 12  20
+       /  /  \
+      9  19  25
+         /   \
+        15   19
+
+\end{lstlisting}
+Next, we perform a split operation on the new node's grandparent:
+\begin{lstlisting}
+      12
+    /    \
+   7     18
+  / \   /  \
+ 3   9 15  20
+/ \        / \
+1   5      19  25
+
+\end{lstlisting}
+Now, the tree is balanced according to the level and skew properties.
+\section{\textbf{Explain B+ Tree with an example.}}
+\textbf{Ans.} A B+ tree is a type of self-balancing tree that is commonly used for indexing and organizing large amounts of data in databases and file systems. It has a similar structure to a B-tree but with some key differences, such as all data being stored in the leaf nodes and internal nodes only containing keys.\\
+
+Here's an example of a B+ tree:
+\begin{lstlisting}
+            +----+
+            | 30 |
+            +----+
+         /          \
+     +----+          +----+
+     | 50 |          | 70 |
+     +----+          +----+
+    /      \        /      \
++----+   +----+  +----+   +----+
+| 10 |   | 20 |  | 40 |   | 60 |
++----+   +----+  +----+   +----+
+
+\end{lstlisting}
+In this example, each node has a maximum of three keys and four pointers to child nodes. The tree is balanced because all paths from the root to the leaf nodes have the same length.\\
+
+To perform a search in the B+ tree, we start at the root and compare the search key to the keys in the node. If the search key is less than the first key, we follow the leftmost pointer to the next node. If the search key is greater than or equal to the last key, we follow the rightmost pointer to the next node. Otherwise, we follow the pointer to the node whose key range contains the search key.\\
+
+For example, if we wanted to search for the value 20 in the above tree, we would start at the root node and find that the key range of the leftmost child node is less than 20, but the key range of the second child node contains 20, so we would follow the pointer to that node:
+\begin{lstlisting}
+             +----+
+             | 30 |
+             +----+
+            /       \
+    +----+            +----+
+    | 50 |            | 70 |
+    +----+            +----+
+   /      \          /      \
++----+   +----+  +----+   +----+
+| 10 |   | 20 |  | 40 |   | 60 |
++----+   +----+  +----+   +----+
+                    ^
+                    |
+                search
+
+\end{lstlisting}
+Then, we would search the leaf node for the value 20 and find that it is present in the node:
+\begin{lstlisting}
+    +----+
+    | 20 |
+    +----+
+     /  \
+  prev  next
+
+\end{lstlisting}
+To perform an insertion in the B+ tree, we start at the root and traverse the tree to find the leaf node where the new key should be inserted. If the node has room for the new key, we insert it and update the keys in the internal nodes on the path from the root to the leaf. If the node is full, we split it into two nodes and promote the median key to the parent node. This may propagate up the tree, causing additional splits and promotions until the root is reached and possibly requiring the tree to grow taller.\\
+
+For example, if we wanted to insert the value 35 into the above tree, we would start at the root node and find that the key range of the rightmost child node is greater than 35, so we would follow the pointer to that node:
+\begin{lstlisting}
+            +----+
+            | 30 |
+            +----+
+          /        \
+    +----+          +----+
+    | 50 |          | 70 |
+    +----+          +----+
+    /      \        /      \
++----+   +----+  +----+   +----+
+| 10 |   | 20 |  | 40 |   | 60 |
++----+   +----+  +----+   +----+
+                   ^
+                   |
+                  insert
+
+\end{lstlisting}
+Since the node is full, we split it into two nodes and promote the median key (40) to the parent node:
+\begin{lstlisting}
+        +----+
+        | 30 |
+        +----+
+      /        \
++----+          +----+----+
+| 40 |          | 50 | 70 |
++----+          +----+----+
+/      \           /      \   
++----+   +----+  +----+   +----+
+| 10 |   | 20 |  |     |   | 60 |
++----+   +----+  +----+   +----+
+                    ^
+                    |
+                insert
+
+\end{lstlisting}
+Now, we want to insert the value 45 into the tree. We start at the root node and find that the key range of the rightmost child node is greater than 45, so we follow the pointer to that node:
+\begin{lstlisting}
+          +----+
+          | 30 |
+          +----+
+        /        \
+   +----+          +----+----+
+   | 40 |          | 50 | 70 |
+   +----+          +----+----+
+  /      \        /      \   |
++----+   +----+  +----+   +----+
+| 10 |   | 20 |  |     |   | 60 |
++----+   +----+  +----+   +----+
+                   ^
+                   |
+                  insert
+
+\end{lstlisting}
+Since the node is full, we split it into two nodes and promote the median key (50) to the parent node:
+\begin{lstlisting}
+            +----+
+            | 30 |
+            +----+
+          /        \
+    +----+          +----+----+
+    | 40 |          | 50 | 60 | 70 |
+    +----+          +----+----+----+
+    /      \        /      \   |   |
++----+   +----+  +----+    +----+   |
+ | 10 |   | 20 |  |     |   |     |   |
++----+   +----+  +----+    +----+   |
+                                      |
+                                    insert
+
+\end{lstlisting}
+Now, the B+ tree has been updated with the new value 45. The tree remains balanced and all paths from the root to the leaf nodes still have the same length.`'
+\end{document}

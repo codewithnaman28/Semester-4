@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}\textbf {Problem Statement}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objective}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textit {Graph and its types}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textit {Representation of graph using adjacency list with one example and diagram.}}{4}{}%
+\contentsline {subsection}{\numberline {3.3}\textit {Graph Traversals DFT and BFT with example and diagrams}}{4}{}%
+\contentsline {section}{\numberline {4}\textbf {Implementation}}{6}{}%
+\contentsline {subsection}{\numberline {4.1}\textit {Platform}}{6}{}%
+\contentsline {subsection}{\numberline {4.2}\textit {Test Conditions}}{6}{}%
+\contentsline {section}{\numberline {5}\textbf {Conclusion}}{7}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ's}}{7}{}%
+\contentsline {subsection}{\numberline {6.1}\textit {Explain two applications of graph.}}{7}{}%
+\contentsline {subsection}{\numberline {6.2}\textit {Explain advantages of adjacency list over adjacency matrix.}}{7}{}%
+\contentsline {subsection}{\numberline {6.3}\textit {Why transversal in graph is different than traversal in tree}}{8}{}%

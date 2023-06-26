@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}\textbf {Problem Statement}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objective}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textit {What is Spanning tree. Explain with example.}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textit {Example of weighted graph and its cost adjacency matrix (with diagrams)}}{2}{}%
+\contentsline {subsection}{\numberline {3.3}\textit {Explanation of Prim’s algorithm using the above example graph}}{3}{}%
+\contentsline {section}{\numberline {4}\textbf {Implementation}}{4}{}%
+\contentsline {subsection}{\numberline {4.1}\textit {Platform}}{4}{}%
+\contentsline {section}{\numberline {5}\textbf {Conclusion}}{5}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ's}}{5}{}%
+\contentsline {subsection}{\numberline {6.1}\textit {Explain two applications of minimum cost spanning tree.}}{5}{}%
+\contentsline {subsection}{\numberline {6.2}\textit {Explain the difference between Prim’s and Kruskal’s Algorithm for finding minimum cost spanning tree with a small example graph.}}{5}{}%
+\contentsline {subsection}{\numberline {6.3}\textit {Which algorithmic strategy is used in Prim’s algorithm. Explain that algorithmic strategy in brief.}}{6}{}%

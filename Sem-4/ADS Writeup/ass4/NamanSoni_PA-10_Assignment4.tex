@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+	{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Advanced Data Structures}\\[2\baselineskip] % Title
+		{\large\textit{Assignment 4}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+	
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Problem Statement}}
+Implement threaded binary tree and perform inorder traversal.
+\section{\textbf{Objective}}
+\begin{itemize}
+	\item To study the data Structure : Threaded Binary Tree
+	\item To study the advantages of Threaded Binary Tree over Binary Tree
+\end{itemize}
+\section{\textbf{Theory}}
+\subsection{\textbf{\textit{The data structure : Threaded Binary Tree}}}
+A Threaded Binary Tree is a modified version of a binary tree where each node has a reference or pointer to its in-order predecessor or successor, called threaded links. These threaded links make traversal of the tree more efficient, as they eliminate the need for recursive function calls and stack space for storing nodes.\\
+
+In a threaded binary tree, the null pointers of leaf nodes are replaced by pointers to their in-order predecessor and successor. For a node that has a left child, its predecessor link points to the maximum node in its left subtree. For a node that has a right child, its successor link points to the minimum node in its right subtree.\\
+
+There are two types of threaded binary trees: singly threaded and doubly threaded. In a singly threaded tree, each node has either a predecessor or a successor thread, while in a doubly threaded tree, each node has both predecessor and successor threads.\\
+
+Threaded binary trees are useful in applications where traversal of the tree is a common operation, such as in database indexing and searching, and they can save both memory and computational resources. However, they are more complicated to implement than standard binary trees, and the threaded links must be maintained when nodes are inserted or removed from the tree.
+\subsection{\textbf{\textit{Space Utilization in Threaded Binary Tree}}}
+Space utilization in a threaded binary tree is a measure of how efficiently the memory is used to store the tree structure. Compared to a regular binary tree, a threaded binary tree can potentially save space by using the null pointers of leaf nodes to store threaded links to their in-order predecessors or successors.\\
+
+In a singly threaded binary tree, each leaf node has one threaded link, which replaces one null pointer. In a doubly threaded binary tree, each leaf node has two threaded links, which replace two null pointers. This means that a threaded binary tree can potentially use up to 50 \%  less memory than a regular binary tree.\\
+
+However, the actual space savings depend on the size and shape of the tree, as well as the implementation of the threaded links. In some cases, the overhead of maintaining the threaded links may outweigh the space savings.\\
+
+Overall, space utilization is an important consideration when designing and implementing a threaded binary tree, and it is important to balance the benefits of space savings with the cost of additional complexity in the implementation.
+\section{\textbf{Implementation}}
+\subsection{\textbf{\textit{Platform}}}
+\begin{itemize}
+	\item 64-bit Mac OS
+	\item Open Source C++ Programming tool like Visual Studio Code
+\end{itemize}
+\subsection{\textbf{\textit{Test Conditions}}}
+\begin{enumerate}
+	\item Input at least 10 nodes.
+	\item Display inorder traversal of binary tree with 10 nodes.
+\end{enumerate}
+\section{\textbf{Conclusion}}
+Thus, implemented threaded binary tree with inorder traversal.
+\section{\textbf{FAQ's}}
+\subsection{\textit{Why TBT can be traversed without stack?}}
+A Threaded Binary Tree (TBT) can be traversed without using a stack because of the presence of the threaded links between nodes. These links provide a way to navigate the tree without having to use a recursive function call or a stack to keep track of the nodes.\\
+
+For example, in-order traversal of a TBT involves visiting the left subtree, the current node, and the right subtree in that order. To traverse a TBT in-order without a stack, we start at the root node and follow the left pointers until we reach a node with a null left pointer, which means we have reached the leftmost node. At this point, we visit the node, and then follow its successor link to the next node in the in-order sequence. We repeat this process until we reach the rightmost node, which has a null successor link.\\
+
+By using the threaded links instead of a stack, we can traverse the tree without incurring the overhead of a recursive function call or the additional memory required to store nodes on the stack. This can make the traversal more efficient, especially for large or deep trees, where the stack space required for recursive traversal can be significant.
+\subsection{\textit{What are the advantages and disadvantages of TBT?}}
+\textbf{Advantages of Threaded Binary Trees (TBT's)}:
+\begin{enumerate}
+	\item Improved traversal efficiency: TBTs allow for in-order traversal without using a stack, which can improve traversal efficiency by reducing memory usage and eliminating the need for recursive function calls.
+	\item Space optimization: TBTs can potentially use less memory than regular binary trees by using null pointers in leaf nodes to store threaded links to their in-order predecessors or successors.
+	\item Fast searching: TBTs can be used for searching and sorting, and their threaded links can make these operations faster by reducing the number of comparisons needed to find a specific node.
+\end{enumerate}
+\textbf{Disadvantages of Threaded Binary Trees (TBT's)}
+\begin{enumerate}
+	\item More complex implementation: Implementing TBTs requires additional logic to maintain the threaded links when nodes are inserted or removed from the tree. This can make the implementation more complex and error-prone than regular binary trees.
+	\item Increased overhead: Maintaining the threaded links can add overhead to the insertion and removal operations, which may reduce the overall performance of the tree.
+	\item Limited flexibility: TBTs are specifically designed for in-order traversal and may not be well-suited for other types of tree operations or data structures.
+\end{enumerate}
+\subsection{\textit{Write application of TBT}}
+Threaded Binary Trees (TBTs) can be used in a variety of applications, including:
+\begin{enumerate}
+	\item In-order traversal: TBTs were originally designed for efficient in-order traversal of binary trees. TBTs can be used to traverse the tree without using a stack, which can be useful for large or deep trees where stack space is a concern.
+	\item Searching and sorting: TBTs can be used for searching and sorting operations, where their threaded links can improve performance by reducing the number of comparisons needed to find a specific node.
+	\item Memory optimization: TBTs can potentially use less memory than regular binary trees by using null pointers in leaf nodes to store threaded links to their in-order predecessors or successors. This can be useful in memory-constrained environments, such as embedded systems or mobile devices.
+	\item Data compression: TBTs can be used in data compression algorithms, such as Huffman coding, where they can be used to efficiently represent the frequency of characters in a text string.
+	\item Expression evaluation: TBTs can be used in expression evaluation, where they can be used to represent and evaluate arithmetic expressions, such as postfix notation or expression trees.
+\end{enumerate}
+\end{document}

@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+	
+	\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	
+	\raggedleft\rule{1pt}{\textheight} % Vertical line
+	\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+	\parbox[b]{0.75\textwidth}
+	{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+		
+		{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Advanced Data Structures}\\[2\baselineskip] % Title
+		{\large\textit{Assignment 3}}\\[4\baselineskip] % Subtitle or further description
+		{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+		
+		\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+	}
+	
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Problem Statement}}
+Implement dictionary using binary search tree where dictionary stores keywords and  its meanings.\\
+Perform following operations:
+\begin{itemize}
+	\item  Insert a keyword
+	\item  Delete a keyword
+	\item  Create mirror image and display level wise
+	\item Copy
+\end{itemize}
+\section{\textbf{Objectives}}
+\begin{itemize}
+	\item To study data structure : Binary Search Tree
+	\item To study breadth first traversal.
+	\item To study different operations on Binary search Tree.
+\end{itemize}
+\section{\textbf{Theory}}
+\subsection{\textbf{\textit{Binary Search Tree}}}
+A binary search tree is a type of data structure used to store a collection of elements in a sorted order. It is called a "binary" tree because each node in the tree has at most two children: a left child and a right child.\\
+
+The structure of the tree is such that the value of any node in the left subtree is less than the value of its parent node, and the value of any node in the right subtree is greater than the value of its parent node. This property makes it possible to search for an element in the tree efficiently, by repeatedly comparing the target value with the value of the current node and then traversing either the left or right subtree accordingly.\\
+
+Binary search trees can be used for a variety of operations, including insertion, deletion, and searching for elements. They are commonly used in computer science for implementing algorithms like binary search and quicksort. However, if the tree is not balanced (i.e. if one subtree is much deeper than the other), the performance of these operations can degrade and lead to inefficiencies.
+\subsection{\textbf{\textit{Breadth First Traversal}}}
+Breadth First Traversal, also known as level order traversal, is a tree traversal algorithm that visits all the nodes of a tree in a breadth-first manner, i.e. it visits all the nodes at each level before moving on to the next level.\\
+
+Starting from the root node, the algorithm visits all the nodes at level 1 (i.e. the immediate children of the root node) from left to right, then visits all the nodes at level 2 (i.e. the children of the nodes at level 1) from left to right, and so on until all the nodes in the tree have been visited.\\
+
+The algorithm uses a queue data structure to keep track of the nodes to be visited, and a visited set to keep track of the nodes that have already been visited. Initially, the root node is added to the queue and marked as visited. Then, while the queue is not empty, the algorithm dequeues the next node in the queue, visits it, and enqueues all its unvisited children (if any). The algorithm continues until the queue is empty, at which point all nodes in the tree will have been visited in breadth-first order.\\
+
+Breadth First Traversal has a time complexity of O(n), where n is the number of nodes in the tree, as it visits each node exactly once. It is commonly used in graph algorithms, such as finding the shortest path between two nodes in an unweighted graph.
+\subsection{\textbf{\textit{Different operations on binary search tree.(copy ,mirror image and delete)}}}
+Here are brief descriptions of different operations on binary search trees:
+\begin{enumerate}
+	\item Copy: To copy a binary search tree, we need to create a new tree and copy all the nodes of the original tree into the new tree. We can use either recursive or iterative approach for this operation. In the recursive approach, we start from the root node of the original tree and copy it into the new tree. Then, we recursively copy the left and right subtrees of the root node. In the iterative approach, we use a stack to traverse the original tree and create a new node for each visited node.
+	\item Mirror Image: To create a mirror image of a binary search tree, we need to swap the left and right subtrees of each node in the tree. This can be done recursively by traversing the tree and swapping the subtrees of each node.
+	\item Delete: To delete a node from a binary search tree, we first need to find the node to be deleted. We then need to handle three cases:
+	\begin{itemize}
+		\item If the node has no children, we simply remove it from the tree.
+		\item If the node has one child, we replace it with its child.
+		\item If the node has two children, we find the node with the smallest value in its right subtree (or the node with the largest value in its left subtree), copy its value to the node to be deleted, and then delete the node with the smallest value (or largest value).
+	\end{itemize}
+We can use a recursive or iterative approach for this operation. In the recursive approach, we start from the root node and recursively search for the node to be deleted. In the iterative approach, we use a loop to traverse the tree and find the node to be deleted.
+\section{\textbf{Implementation}}
+\subsection{\textbf{\textit{Platform}}}
+Visual Studio Code\\
+Mac OS 64 bit
+\section{\textbf{Test Conditiions}}
+\begin{itemize}
+	\item Input at least 10 nodes.
+	\item Display binary search tree levelwise traversals of binary search tree with 10 nodes
+	\item Display mirror image and copy operations on BST
+\end{itemize}
+\section{\textbf{Conclusion}}
+Thus, implemented Dictionary using Binary search tree.
+\section{\textbf{FAQ's}}
+\begin{enumerate}
+	\item Explain application of BST?\\
+	
+		\textbf{Ans.} Binary Search Trees (BSTs) have a wide range of applications in computer science some of them are:
+		\begin{itemize}
+			\item Searching: BSTs are commonly used to perform searching operations efficiently. Because of the tree structure of BSTs and their ordering property, it is possible to search for a specific element in O(log n) time, where n is the number of elements in the tree.
+			\item Sorting: BSTs can be used to sort a set of elements efficiently. By inserting elements into a BST in sorted order and then performing an in-order traversal of the tree, we can retrieve the elements in sorted order.
+			\item Symbol table: A symbol table is a data structure that is used to store key-value pairs, and it is commonly used in compilers, interpreters, and other software systems. BSTs can be used to implement symbol tables efficiently, with operations such as insert, delete, and search running in O(log n) time.
+			\item File system: BSTs can be used to implement file systems efficiently, with directories and files represented as nodes in the tree. By maintaining the ordering property of the BST, we can quickly search for files and navigate through the directory structure.
+			\item Network routing: BSTs can be used to implement network routing tables efficiently, with IP addresses and routing information stored as key-value pairs in the tree. By searching the tree for a given IP address, we can quickly  determine the appropriate route for a packet to take.
+		\end{itemize}
+	
+	\item Explain with example deletion of a node having two child.?\\
+	
+	\textbf{Ans.}  Deleting a node with two children from a binary search tree can be a bit more complex than deleting a node with no children or one child. Here is an example of how to delete a node with two children:
+		\begin{itemize}
+			\item Suppose we have the following binary search tree:
+			\begin{lstlisting}
+					     10
+					    /  \
+					   5    15
+					  / \   / \
+					 3   7 13  18
+			\end{lstlisting}
+			We want to delete the node with key value 10. This node has two children, so we need to find the node with the smallest key value in its right subtree to replace it. Here are the steps we can follow:\\
+			
+			Find the node with the smallest key value in the right subtree of the node to be deleted. In this case, the right subtree of 10 is:
+			\begin{lstlisting}
+					      15
+					     /  \
+					    13  18
+			\end{lstlisting}
+			The smallest key value in this subtree is 13.\\
+			
+			Copy the key value of the node we found in step 1 (13) to the node we want to delete (10)\\
+			
+			Delete the node we found in step 1 (13). Because it has no children, we can simply remove it from the tree.\\
+			
+			The resulting tree looks like this:
+			\begin{lstlisting}
+					   13
+					  /  \
+				   5    15
+					/ \     \
+				 3   7    18
+			\end{lstlisting}
+		\item Define skewed binary tree.?\\
+		
+		\textbf{Ans.}  A skewed binary tree is a type of binary tree in which all of the nodes are either left or right children of their parent. In other words, the tree is "lopsided" in one direction, with all of the nodes either slanting to the left or slanting to the right.\\
+		
+		There are two types of skewed binary trees:
+		\begin{itemize}
+			\item Left-skewed binary tree: In a left-skewed binary tree, all of the nodes have a left child, except for the leaf nodes, which have no children. An example of a left-skewed binary tree is:
+			\begin{lstlisting}
+				      1
+				       \
+				        2
+				         \
+				          3
+				           \
+				            4
+				             \
+				              5
+			\end{lstlisting}
+			\item Right-skewed binary tree: In a right-skewed binary tree, all of the nodes have a right child, except for the leaf nodes, which have no children. An example of a right-skewed binary tree is:
+			\begin{lstlisting}
+				                1
+				               /
+				             2
+				            /
+				          3
+				         /
+				       4
+				      /
+				     5
+			\end{lstlisting}
+			Skewed binary trees can be unbalanced and can lead to inefficient operations such as searching and inserting, as the time complexity of these operations may be O(n) in the worst case, where n is the number of nodes in the tree. Therefore, balancing techniques such as rotation and rebalancing may be applied to improve the performance of skewed binary trees.
+		\end{itemize}
+		\end{itemize}
+\end{enumerate}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}\textbf {Problem Statement}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objective}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textbf {What is AVL tree?}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textbf {Explain Different cases of AVL trees.}}{2}{}%
+\contentsline {subsection}{\numberline {3.3}\textbf {Construction of AVL trees and Data Structure used for creation.}}{3}{}%
+\contentsline {section}{\numberline {4}\textbf {Implementation}}{3}{}%
+\contentsline {subsection}{\numberline {4.1}\textit {Platform}}{3}{}%
+\contentsline {section}{\numberline {5}\textbf {Conclusion}}{4}{}%
+\contentsline {section}{\numberline {6}\textbf {FAQ's}}{4}{}%
+\contentsline {subsection}{\numberline {6.1}\textit {Discuss AVL trees with suitable example?}}{4}{}%
+\contentsline {subsection}{\numberline {6.2}\textit {Compute the time complexity of AVL tree creation?}}{5}{}%
