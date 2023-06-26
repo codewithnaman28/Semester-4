@@ -1,4 +1,3 @@
-'''
 # declare variable
 a = 3
 print(a)
@@ -45,5 +44,3 @@ if (a == b):
     print("equal")
 else:
     print("not equal")
-'''
-
