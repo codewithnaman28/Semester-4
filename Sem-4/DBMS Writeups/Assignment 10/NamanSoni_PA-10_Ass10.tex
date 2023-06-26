@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+	\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+		
+		\raggedleft\rule{1pt}{\textheight} % Vertical line
+		\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+		\parbox[b]{0.75\textwidth}
+		{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+			
+			{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Database Management System}\\[2\baselineskip] % Title
+			{\large\textit{Assignment 10}}\\[4\baselineskip] % Subtitle or further description
+			{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+			
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+		
+\end{titlepage}
+\end{document}

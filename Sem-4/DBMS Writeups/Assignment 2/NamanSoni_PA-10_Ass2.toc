@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objectives}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {3.1}\textit {SQL Data Definition Language (DDL)}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}\textit {What is Data Definition Language?}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}\textbf {DDL Commands}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}\textbf {DDL Command Syntax and Examples}}{2}{}%
+\contentsline {subsection}{\numberline {3.2}\textit {SQL Data Control Language (DCL)}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}\textit {What is Data Control Language?}}{2}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}\textit {DCL Commands}}{3}{}%
+\contentsline {section}{\numberline {4}\textbf {Platform}}{3}{}%
+\contentsline {section}{\numberline {5}\textbf {Platform}}{3}{}%
+\contentsline {section}{\numberline {6}\textbf {Output}}{3}{}%
+\contentsline {section}{\numberline {7}\textbf {Conclusion}}{6}{}%
+\contentsline {section}{\numberline {8}\textbf {FAQ's}}{6}{}%
+\contentsline {subsection}{\numberline {8.1}\textbf {How to drop a column from a table?}}{6}{}%
+\contentsline {subsection}{\numberline {8.2}\textbf {How to add a primary key in an already existing table?}}{7}{}%
+\contentsline {subsection}{\numberline {8.3}\textbf {How to create a new user in MySQL?}}{7}{}%

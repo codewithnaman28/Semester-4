@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objective}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Input}}{2}{}%
+\contentsline {section}{\numberline {5}\textbf {Output}}{2}{}%
+\contentsline {section}{\numberline {6}\textbf {Conclusion}}{2}{}%
+\contentsline {section}{\numberline {7}\textbf {FAQ's}}{2}{}%
+\contentsline {subsection}{\numberline {7.1}\textit {How to drop a column from a table?}}{2}{}%
+\contentsline {subsection}{\numberline {7.2}\textit {How to add a primary key in an already existing table?}}{3}{}%
+\contentsline {subsection}{\numberline {7.3}\textit {How to create a new user in MySQL?}}{3}{}%

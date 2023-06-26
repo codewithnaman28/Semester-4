@@ -1,0 +1,342 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+		
+		\raggedleft\rule{1pt}{\textheight} % Vertical line
+		\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+		\parbox[b]{0.75\textwidth}
+		{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+			
+			{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Data Base Management System}\\[2\baselineskip] % Title
+			{\large\textit{Assignment 3}}\\[4\baselineskip] % Subtitle or further description
+			{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+			
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+		
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Aim}}
+Design and Develop SQL DDL statements for different system.
+
+\section{\textbf{Objectives}}
+To study DDL, DCL commands.
+
+\section{\textbf{Theory}}
+\subsection{\textit{SQL Data Definition Language (DDL)}}
+\subsubsection{\textit{What is Data Definition Language?}}
+Data Definition Language (DDL) is a computer language used to define the database schema. It includes commands to create, modify and drop database objects in the database.
+It is used to define the database structure or schema. It is also used to define the access permissions on the data, or the views that are presented to different users.
+\subsubsection{\textbf {DDL Commands}}
+The following are the Commands that are used in DDL:
+\begin{enumerate}
+    \item CREATE \- Creates a new database or a new table in a database.
+    \item ALTER \- Modifies a database or a table.
+    \item DROP \- Deletes a database or a table.
+    \item TRUNCATE \- Deletes all the records from a table, including all spaces allocated for the records are removed.
+    \item COMMENT \- Adds comments to the data dictionary.
+    \item RENAME \- Renames an object.
+    
+\end{enumerate}
+\subsubsection{\textbf{DDL Command Syntax and Examples}}
+1. CREATE TABLE \- Creates a new database table.
+CREATE TABLE table\_name constraints
+(
+Column\_name datatype (size) constraints default `'
+Column\_name datatype (size), constraint (column\_name)
+):
+2. ALTER TABLE \- Changes in columns and stuff.
+ALTER TABLE table\_name
+ADD column\_name datatype;
+3. DROP TABLE \- Deletes a table from the database.
+DROP TABLE table\_name;
+4. RENAME TABLE \- Renames a table.
+RENAME TABLE old\_name TO new\_name;
+5. TRUNCATE TABLE \- Deletes all the records from a table.
+TRUNCATE TABLE table\_name;
+6. COMMENT ON \- Adds comments to the data dictionary.
+COMMENT ON TABLE table\_name IS `comment';
+\subsection{\textit{SQL Data Control Language (DCL)}}
+\subsubsection{\textit{What is Data Control Language?}}
+Data Control Language (DCL) is a computer language used to define the access permissions on the data, or the views that are presented to different users. It includes commands to grant and deny privileges on database objects to users.
+\subsubsection{\textit{DCL Commands}}
+The following are the Commands that are used in DCL\:
+1. GRANT \- Gives the specified privileges to the specified user.
+2. REVOKE \- Takes back the specified privileges from the specified user.
+4.3 DCL Command Syntax and Examples
+1. GRANT \- Gives the specified privileges to the specified user.
+GRANT privileges ON object\_name TO user\_name;
+2. REVOKE \- Takes back the specified privileges from the specified user.
+REVOKE privileges ON object\_name FROM user\_name;
+\section{\textbf{Platform}}
+Operating System: Arch Linux ×86\-64
+IDEs or Text Editors Used: Draw.io for Drawing the ER diagram.
+\section{\textbf{Platform}}
+Mac OS 64-bits
+\section{\textbf{Output}}
+\begin{lstlisting}[language=SQL]
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 10.11.2-MariaDB Arch Linux
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| class              |
+| class_stuff        |
+| dbms_lab           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| test               |
+| test_libreoffice   |
++--------------------+
+9 rows in set (0.004 sec)
+
+MariaDB [(none)]> use dbms_lab
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [dbms_lab]> show tables;
++--------------------+
+| Tables_in_dbms_lab |
++--------------------+
+| books              |
+| course             |
+| new_book_master    |
+| newauthor          |
+| newbook_master     |
++--------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [dbms_lab]> create table Hotel (HotelNo int Primary Key, Name varchar(50), City varchar(50));
+Query OK, 0 rows affected (0.020 sec)
+
+MariaDB [dbms_lab]> describe Hotel;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| HotelNo | int(11)     | NO   | PRI | NULL    |       |
+| Name    | varchar(50) | YES  |     | NULL    |       |
+| City    | varchar(50) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.002 sec)
+
+MariaDB [dbms_lab]> create table Room (RoomNo int Primary Key, HotelNo int, Type varchar(50), Price int, foreign key(HotelNo) references Hotel(HotelNo));
+Query OK, 0 rows affected (0.014 sec)
+
+MariaDB [dbms_lab]> describe Room;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| RoomNo  | int(11)     | NO   | PRI | NULL    |       |
+| HotelNo | int(11)     | YES  | MUL | NULL    |       |
+| Type    | varchar(50) | YES  |     | NULL    |       |
+| Price   | int(11)     | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [dbms_lab]> create table Booking (HotelNo int, GuestNo int, DateFrom date, DateTo date, RoomNo int, foreign key(HotelNo) references Hotel(HotelNo), foreign key(RoomNo) references Room(RoomNo));
+Query OK, 0 rows affected (0.011 sec)
+
+MariaDB [dbms_lab]> describe Booking;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| HotelNo  | int(11) | YES  | MUL | NULL    |       |
+| GuestNo  | int(11) | YES  |     | NULL    |       |
+| DateFrom | date    | YES  |     | NULL    |       |
+| DateTo   | date    | YES  |     | NULL    |       |
+| RoomNo   | int(11) | YES  | MUL | NULL    |       |
++----------+---------+------+-----+---------+-------+
+5 rows in set (0.002 sec)
+
+MariaDB [dbms_lab]> create table Guest(GuestNo int primary key, GuestName varchar(50), GuessAddress varchar(50));
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [dbms_lab]> alter table Booking add constraint foreign key(GuestNo) references Guest(GuestNo);
+Query OK, 0 rows affected (0.022 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [dbms_lab]> describe Booking;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| HotelNo  | int(11) | YES  | MUL | NULL    |       |
+| GuestNo  | int(11) | YES  | MUL | NULL    |       |
+| DateFrom | date    | YES  |     | NULL    |       |
+| DateTo   | date    | YES  |     | NULL    |       |
+| RoomNo   | int(11) | YES  | MUL | NULL    |       |
++----------+---------+------+-----+---------+-------+
+5 rows in set (0.004 sec)
+
+MariaDB [dbms_lab]> describe Guest;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| GuestNo      | int(11)     | NO   | PRI | NULL    |       |
+| GuestName    | varchar(50) | YES  |     | NULL    |       |
+| GuessAddress | varchar(50) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.001 sec)
+
+MariaDB [dbms_lab]> describe Room;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| RoomNo  | int(11)     | NO   | PRI | NULL    |       |
+| HotelNo | int(11)     | YES  | MUL | NULL    |       |
+| Type    | varchar(50) | YES  |     | NULL    |       |
+| Price   | int(11)     | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [dbms_lab]> describe Hotel;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| HotelNo | int(11)     | NO   | PRI | NULL    |       |
+| Name    | varchar(50) | YES  |     | NULL    |       |
+| City    | varchar(50) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.002 sec)
+
+ariaDB [dbms_lab]> create table emp(eno int primary key, ename varchar(50), zip int check(zip in (400110, 400111)), hdate date unique);
+Query OK, 0 rows affected (0.009 sec)
+
+MariaDB [dbms_lab]> describe emp;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| eno   | int(11)     | NO   | PRI | NULL    |       |
+| ename | varchar(50) | YES  |     | NULL    |       |
+| zip   | int(11)     | YES  |     | NULL    |       |
+| hdate | date        | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [dbms_lab]> create table parts(pno int primary key, pname varchar(50), qty_on_hand int not null, price int);
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [dbms_lab]> describe parts;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| pno         | int(11)     | NO   | PRI | NULL    |       |
+| pname       | varchar(50) | YES  |     | NULL    |       |
+| qty_on_hand | int(11)     | NO   |     | NULL    |       |
+| price       | int(11)     | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [dbms_lab]> create table customer(cno primary key, cname varchar(50), street varchar(50), Zip int not null, phone int not null unique);
+ERROR 4161 (HY000): Unknown data type: 'primary'
+MariaDB [dbms_lab]> create table customer(cno int primary key, cname varchar(50), street varchar(50), Zip int not null, phone int not null unique);
+Query OK, 0 rows affected (0.009 sec)
+
+MariaDB [dbms_lab]> describe customer;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| cno    | int(11)     | NO   | PRI | NULL    |       |
+| cname  | varchar(50) | YES  |     | NULL    |       |
+| street | varchar(50) | YES  |     | NULL    |       |
+| Zip    | int(11)     | NO   |     | NULL    |       |
+| phone  | int(11)     | NO   | UNI | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.002 sec)
+
+MariaDB [dbms_lab]> create table Orders(ono int primary key, cno int, receivedDate date, shippedDate date, foreign key(cno) references customer(cno));
+Query OK, 0 rows affected (0.010 sec)
+
+MariaDB [dbms_lab]> describe Orders;
++--------------+---------+------+-----+---------+-------+
+| Field        | Type    | Null | Key | Default | Extra |
++--------------+---------+------+-----+---------+-------+
+| ono          | int(11) | NO   | PRI | NULL    |       |
+| cno          | int(11) | YES  | MUL | NULL    |       |
+| receivedDate | date    | YES  |     | NULL    |       |
+| shippedDate  | date    | YES  |     | NULL    |       |
++--------------+---------+------+-----+---------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [dbms_lab]> create table odetails(ono int, pno int, qty int, foreign key(ono) references Orders(ono));
+Query OK, 0 rows affected (0.009 sec)
+
+MariaDB [dbms_lab]> describe odetails;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| ono   | int(11) | YES  | MUL | NULL    |       |
+| pno   | int(11) | YES  |     | NULL    |       |
+| qty   | int(11) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+3 rows in set (0.002 sec)
+
+MariaDB [dbms_lab]> create table zipcode(zip int primary key, city varchar(50) not null check(city in ('Pune', 'Mumbai')));
+Query OK, 0 rows affected (0.008 sec)
+
+MariaDB [dbms_lab]> describe zipcode;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| zip   | int(11)     | NO   | PRI | NULL    |       |
+| city  | varchar(50) | NO   |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.002 sec)
+\end{lstlisting}
+\section{\textbf{Conclusion}}
+Thus we have learned DDL and DCL commands throughly.
+\section{\textbf{FAQ's}}
+\subsection{\textbf{How to drop a column from a table?}}
+ALTER TABLE table\_name
+DROP COLUMN column\_name;
+\subsection{\textbf{How to add a primary key in an already existing table?}}
+ALTER TABLE table\_name
+ADD PRIMARY KEY (column\_name);
+\subsection{\textbf{How to create a new user in MySQL?}}
+CREATE USER `username'@'localhost' IDENTIFIED BY `password';
+\end{document}
+

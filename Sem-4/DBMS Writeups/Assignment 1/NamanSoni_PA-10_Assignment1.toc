@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objectives}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Theory}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Platform}}{3}{}%
+\contentsline {section}{\numberline {5}\textbf {Output}}{4}{}%
+\contentsline {section}{\numberline {6}\textbf {Conclusion}}{4}{}%
+\contentsline {section}{\numberline {7}\textbf {FAQ's}}{4}{}%

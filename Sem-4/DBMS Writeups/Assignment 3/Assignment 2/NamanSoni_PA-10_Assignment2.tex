@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+		
+		\raggedleft\rule{1pt}{\textheight} % Vertical line
+		\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+		\parbox[b]{0.75\textwidth}
+		{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+			
+			{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Data Base Management System}\\[2\baselineskip] % Title
+			{\large\textit{Assignment 2}}\\[4\baselineskip] % Subtitle or further description
+			{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+			
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+		
+\end{titlepage}
+\tableofcontents
+\pagebreak
+\section{\textbf{Aim}}
+Design and Develop SQL DDL statements for different system.
+\section{\textbf{Objective}}
+To study DDL, DCL commands.
+\section{\textbf{Theory}}
+DDL stands for Data Definition Language and refers to a set of SQL commands used to create, modify, and delete database objects such as tables, views, indexes, and constraints. DDL commands include:
+\begin{itemize}
+    \item \textbf{CREATE:} used to create new database objects such as tables, views, and indexes.
+    \item \textbf{ALTER:} used to modify the structure of existing database objects such as tables and views.
+    \item \textbf{DROP:} used to delete database objects such as tables, views, and indexes.
+    \item \textbf{TRUNCATE:} used to remove all data from a table, but keep its structure intact.
+    \item \textbf{RENAME:} used to change the name of an existing database object.
+\end{itemize}
+
+On the other hand, DCL stands for Data Control Language and refers to a set of SQL commands used to control access to database objects. DCL commands include:
+\begin{itemize}
+    \item \textbf{GRANT:} used to provide specific privileges to a user or role to perform certain operations on database objects.
+    \item \textbf{REVOKE:} used to revoke specific privileges from a user or role.
+    \item \textbf{DENY:} used to prevent a user or role from performing specific operations on database objects.
+\end{itemize}
+\section{\textbf{Input}}
+\section{\textbf{Output}}
+\section{\textbf{Conclusion}}
+Thus, we have learned DDL and DCL commands thoroughly.
+\section{\textbf{FAQ's}}
+\subsection{\textit{How to drop a column from a table?}}
+To drop a column from a table, you can use the ALTER TABLE command with the DROP COLUMN clause. Here's the basic syntax:
+\begin{lstlisting}[language=SQL]
+    ALTER TABLE table_name
+    DROP COLUMN column_name;
+\end{lstlisting}
+Here, table-name is the name of the table from which you want to drop the column, and column-name is the name of the column that you want to drop.
+
+For example, if you have a table called ``employees'' with a column called ``phone-number'' that you want to drop, you can use the following SQL command:
+\begin{lstlisting}[language=SQL]
+    ALTER TABLE employees
+    DROP COLUMN phone-number;
+\end{lstlisting}
+After executing this command, the ``phone-number'' column will be removed from the ``employees'' table. Note that this action cannot be undone, so be sure to make a backup of your database before making any changes to it.
+\subsection{\textit{How to add a primary key in an already existing table?}}
+You can add a primary key to an already existing table using the ALTER TABLE command in SQL. Here's the basic syntax:
+\begin{lstlisting}[language=SQL]
+    ALTER TABLE table_name
+    ADD CONSTRAINT constraint_name PRIMARY KEY (column_name);
+\end{lstlisting}
+Here, table-name is the name of the table to which you want to add a primary key, constraint-name is the name of the constraint you want to give to the primary key, and column-name is the name of the column or columns that you want to include in the primary key.
+
+For example, suppose you have a table called students with ``columns id'', ``name'', and ``email''. If you want to add a primary key constraint to the ``id'' column, you can use the following SQL command:
+\begin{lstlisting}
+    ALTER TABLE students
+    ADD CONSTRAINT pk_students_id PRIMARY KEY (id);
+\end{lstlisting}
+After executing this command, the ``id'' column will be set as the primary key for the ``students'' table. Note that if there are any duplicate values in the ``id'' column, this command will fail, as primary keys must be unique for each row in the table.
+\subsection{\textit{How to create a new user in MySQL?}}
+To create a new user in MySQL, you can use the CREATE USER statement followed by the GRANT statement to grant privileges to the user. Here's the basic syntax:
+\begin{lstlisting}[language=SQL]
+    CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+    GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost';
+    FLUSH PRIVILEGES;
+\end{lstlisting}
+Here, username is the name of the new user that you want to create, and password is the password that you want to assign to the user.
+
+The GRANT statement grants all privileges to the new user on all databases and tables by using the wildcard symbol ``.''. You can modify this statement to grant specific privileges to the user on specific databases and tables.
+
+The FLUSH PRIVILEGES statement is used to reload the privileges table in MySQL so that the new user can immediately access the database.
+
+For example, if you want to create a new user called ``johndoe'' with the password ``password123'', you can use the following SQL commands:
+\begin{lstlisting}[language=SQL]
+    CREATE USER 'johndoe'@'localhost' IDENTIFIED BY 'password123';
+    GRANT ALL PRIVILEGES ON *.* TO 'johndoe'@'localhost';
+    FLUSH PRIVILEGES;
+\end{lstlisting}
+After executing these commands, the new user "johndoe" will be created in MySQL and will have all privileges on all databases and tables.
+\end{document}

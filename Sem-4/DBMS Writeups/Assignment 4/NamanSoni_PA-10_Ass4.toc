@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}\textbf {Aim}}{2}{}%
+\contentsline {section}{\numberline {2}\textbf {Objective}}{2}{}%
+\contentsline {section}{\numberline {3}\textbf {Problem Statement}}{2}{}%
+\contentsline {section}{\numberline {4}\textbf {Theory}}{2}{}%
+\contentsline {subsection}{\numberline {4.1}\textbf {SQL Join types}}{2}{}%
+\contentsline {section}{\numberline {5}\textbf {Platform}}{3}{}%
+\contentsline {section}{\numberline {6}\textbf {Input}}{3}{}%
+\contentsline {section}{\numberline {7}\textbf {Output}}{3}{}%
+\contentsline {section}{\numberline {8}\textbf {FAQ's}}{6}{}%
+\contentsline {subsection}{\numberline {8.1}\textit {When to use self join? How does it differ from other joins?}}{6}{}%
+\contentsline {subsection}{\numberline {8.2}\textit {Compare Cross Join with Natural Join. Share your comments.}}{6}{}%
+\contentsline {subsection}{\numberline {8.3}\textit {What is the importance of SQL joins in database management? Explain its types.}}{8}{}%
+\contentsline {subsection}{\numberline {8.4}\textit {What are the different types of Joins in SQL?}}{8}{}%
+\contentsline {subsection}{\numberline {8.5}\textit {State the difference between inner join and left join.}}{9}{}%
+\contentsline {subsection}{\numberline {8.6}\textit {State difference between left join and right join.}}{9}{}%

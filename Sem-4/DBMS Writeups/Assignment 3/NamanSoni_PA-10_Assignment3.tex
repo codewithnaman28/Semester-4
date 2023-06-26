@@ -1,0 +1,883 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}
+{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\begin{document}
+	\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+		
+		\raggedleft\rule{1pt}{\textheight} % Vertical line
+		\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+		\parbox[b]{0.75\textwidth}
+		{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+			
+			{\Huge\bfseries MIT World Peace University \\[0.5\baselineskip] \ Data Base Management System}\\[2\baselineskip] % Title
+			{\large\textit{Assignment 3}}\\[4\baselineskip] % Subtitle or further description
+			{\Large\textsc{Naman Soni Roll No. 10}} % Author name, lower case for consistent small caps
+			
+			\vspace{0.5\textheight} % Whitespace between the title block and the publisher
+		}
+		
+	\end{titlepage}
+	\tableofcontents
+	\pagebreak
+	\section{\textbf{Aim}} 
+	Write suitable DML and select command to manipulate and retrieve requested data from tables. 
+	
+	\section{\textbf{Objective}} 
+	\begin{enumerate} 
+		\item DML (Insert, Update, Delete) commands, 
+		\item SQL Select- Logical, IN, Negation, NULL, Comparison Operators. 
+		\item Where Clause, Between AND, Exists, ALL, LIKE 
+	\end{enumerate} 
+	
+	\section{\textbf{Theory}} 
+	
+	\subsection{\textbf{ SQL Data Manipulation Language (DML)}} 
+	\subsubsection{\textbf{what is DML?}} 
+	DML stands for Data Manipulation Language. It is used to manipulate the data in the database. It is used to insert, update, delete, and retrieve data from the database. 
+	\subsubsection{\textbf{DML Commands}} 
+	The following are the DML commands:  
+	\begin{itemize} 
+		\item \textbf{INSERT} - inserts new records in a table. 
+		\item \textbf{UPDATE} - updates existing records in a table. 
+		\item \textbf{DELETE} - deletes existing records from a table. 
+		\item \textbf{SELECT} - retrieves records from one or more tables. 
+	\end{itemize} 
+	
+	\subsection{\textbf{DML Commands Syntax and Examples}} 
+	\begin{itemize} 
+		\item \textbf{SELECT} - retrieves records from one or more tables. 
+		\begin{lstlisting}[language=SQL] 
+			SELECT column_name 1 , column_name 2 , ... FROM table_name; 
+		\end{lstlisting} 
+		\item \textbf{INSERT} - inserts new records in a table. 
+		\begin{lstlisting}[language=SQL] 
+			INSERT INTO table_name (column_name 1 , column_name 2 , ...) VALUES (value 1 , value 2 , ...); 
+		\end{lstlisting} 
+		\item \textbf{UPDATE} - updates existing records in a table. 
+		\begin{lstlisting}[language=SQL] 
+			UPDATE table_name SET column_name = value WHERE condition; 
+		\end{lstlisting} 
+		\item \textbf{DELETE} - deletes existing records from a table. 
+		\begin{lstlisting}[language=SQL] 
+			DELETE FROM table_name WHERE condition; 
+		\end{lstlisting} 
+	\end{itemize} 
+	
+	\subsection{\textbf{SELECT query}} 
+	\subsubsection{\textbf{what is SELECT query?}} 
+	The SELECT statement is used to select data from a database. The data returned is stored in a result table, called the result-set. 
+	\subsubsection{\textbf{SELECT query Syntax}} 
+	\begin{lstlisting}[language=SQL] 
+		SELECT column_name 1 , column_name 2 , ... FROM table_name WHERE coloumn_name = value; 
+	\end{lstlisting} 
+	
+	\subsubsection{\textbf{SELECT Operators}} 
+	The following are the operators used in SELECT query: 
+	\begin{enumerate} 
+		\item \textbf{AND:} The AND operator displays a record if both the first condition AND the second condition are true. 
+		\item \textbf{OR:} The OR operator displays a record if either the first condition OR the second condition is true. 
+		\item \textbf{NOT:} The NOT operator displays a record if the condition is NOT true. 
+		\item \textbf{BETWEEN:} The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates. 
+		\item \textbf{IN:} The IN operator allows you to specify multiple values in a WHERE clause. 
+		\item \textbf{LIKE:} The LIKE operator is used in a WHERE clause to search for a specified pattern in a column. 
+	\end{enumerate} 
+	
+	\subsubsection{\textbf{SELECT query Examples}} 
+	
+	\begin{lstlisting}[language=SQL] 
+		SELECT * FROM table_name WHERE coloumn_name = value; 
+		SELECT * FROM table_name WHERE coloumn_name = value AND coloumn_name = value; 
+		SELECT * FROM table_name WHERE coloumn_name = value OR coloumn_name = value; 
+		SELECT * FROM table_name WHERE NOT coloumn_name = value; 
+		SELECT * FROM table_name WHERE coloumn_name BETWEEN value AND value; 
+		SELECT * FROM table_name WHERE coloumn_name IN (value, value, value); 
+		SELECT * FROM table_name WHERE coloumn_name LIKE 'value'; 
+	\end{lstlisting} 
+	
+	\subsection{\textbf{SQL Operators}} 
+	\subsubsection{\textbf{what is SQL Operators?}} 
+	An operator is a symbol that tells the compiler to perform specific mathematical or logical manipulations. 
+	
+	\subsubsection{\textbf{SQL Operators}} 
+	The following are the operators used in SQL: 
+	\begin{enumerate} 
+		\item \textbf{Arithmetic Operators:} Arithmetic operators are used to perform mathematical operations like addition, subtraction, multiplication, and division. 
+		\item \textbf{Comparison Operators:} Comparison operators are used to compare values. It returns either true or false according to the condition. 
+		\item \textbf{Logical Operators:} Logical operators are used to determine the logic between variables or values. 
+		\item \textbf{Misc Operators:} Misc operators are used to perform miscellaneous operations. 
+	\end{enumerate} 
+	
+	\subsubsection{\textbf{Arithmetic Operators}} 
+	The following are the Arithmetic Operators used in SQL: 
+	\begin{enumerate} 
+		\item \textbf{+} - Addition 
+		\item \textbf{-} - Subtraction 
+		\item \textbf{*} - Multiplication 
+		\item \textbf{/} - Division 
+		\item \textbf{\%} - Modulus 
+	\end{enumerate} 
+	
+	\subsubsection{\textbf{Comparison Operators}} 
+	The following are the Comparison Operators used in SQL: 
+	\begin{enumerate} 
+		\item \textbf{=} - Equal 
+		\item \textbf{<>} - Not Equal 
+		\item \textbf{>} - Greater Than 
+		\item \textbf{<} - Less Than 
+		\item \textbf{>=} - Greater Than or Equal To 
+		\item \textbf{<=} - Less Than or Equal To 
+		\item \textbf{BETWEEN} - Between an inclusive range 
+		\item \textbf{LIKE} - Search for a pattern 
+		\item \textbf{IN} - To specify multiple possible values for a column 
+	\end{enumerate} 
+	
+	\subsubsection{\textbf{Logical Operators}} 
+	The following are the Logical Operators used in SQL: 
+	\begin{enumerate} 
+		\item \textbf{AND} - Logical AND 
+		\item \textbf{OR} - Logical OR 
+		\item \textbf{NOT} - Logical NOT 
+	\end{enumerate} 
+	
+	\section{\textbf{Platform}} 
+	\begin{itemize} 
+		\item \textbf{Operating System:} Garuda Linux 
+		\item \textbf{IDE or Text Editor:} Visual Studio Code 
+	\end{itemize} 
+	
+	\section{\textbf{input}} 
+	Given Database from the Problem Statement for the Assignment for our batch. (A1 PA15) 
+	
+	\section{\textbf{output}} 
+	\textbf{Queries Set 1} 
+	\begin{lstlisting}[language=SQL] 
+		
+		1. List the number of employees and average salary for employees in department 20 
+		MariaDB [Company]> select avg(sal),count(*) from emp where deptno=20; 
+		+-----------+----------+ 
+		| avg(sal)  | count(*) | 
+		+-----------+----------+ 
+		| 2253.0000 |        3 | 
+		+-----------+----------+ 
+		1 row in set (0.001 sec) 
+		
+		2. List name, salary and PF amount of all employees. (PF is calculated as 10% of basic salary) 
+		MariaDB [Company]> select empname, sal, sal * 0.10 as PF from emp; 
+		+-----------+------+--------+ 
+		| empname   | sal  | PF     | 
+		+-----------+------+--------+ 
+		| Harriet   | 2362 | 236.20 | 
+		| Frederick | 3597 | 359.70 | 
+		| Manuel    | 2773 | 277.30 | 
+		| Smith     |  800 |  80.00 | 
+		| Mable     | 2937 | 293.70 | 
+		| Allen     | 1936 | 193.60 | 
+		| Parth     | 2000 | 200.00 | 
+		| Henrietta | 2780 | 278.00 | 
+		| Derrick   | 2659 | 265.90 | 
+		| Clarence  | 3175 | 317.50 | 
+		| Effie     | 2012 | 201.20 | 
+		+-----------+------+--------+ 
+		11 rows in set (0.001 sec) 
+		
+		3. List the employee details in the ascending order of their basic salary. 
+		MariaDB [Company]> select * from emp order by sal; 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		| empno | empname   | job        | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		|  7369 | Smith     | Clerk      | 7902 | 1980-12-17 |  800 |  300 |     20 | 
+		|  7499 | Allen     | Salesman   | 7698 | 1981-02-20 | 1936 |  300 |     30 | 
+		|  7500 | Parth     | HR         | 7989 | 1982-03-21 | 2000 |  300 |     40 | 
+		|  7941 | Effie     | Sales      | 6074 | 2071-12-03 | 2012 |  265 |     30 | 
+		|  7054 | Harriet   | Research   | 7917 | 2052-12-08 | 2362 |  229 |     20 | 
+		|  7705 | Derrick   | Sales      | 7234 | 2056-06-30 | 2659 |  208 |     30 | 
+		|  7352 | Manuel    | Accounting | 6190 | 2084-12-21 | 2773 |  253 |     10 | 
+		|  7670 | Henrietta | Sales      | 7381 | 2121-11-16 | 2780 |  217 |     30 | 
+		|  7375 | Mable     | Operations | 6333 | 2097-01-17 | 2937 |  210 |     40 | 
+		|  7871 | Clarence  | Operations | 6991 | 2083-03-24 | 3175 |  228 |     40 | 
+		|  7128 | Frederick | Research   | 7589 | 2077-12-07 | 3597 |  203 |     20 | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		11 rows in set (0.001 sec) 
+		
+		4. List the employee name and hire date in the descending order of the hire date. 
+		MariaDB [Company]> select empname, hiredate from emp order by hiredate desc; 
+		+-----------+------------+ 
+		| empname   | hiredate   | 
+		+-----------+------------+ 
+		| Henrietta | 2121-11-16 | 
+		| Mable     | 2097-01-17 | 
+		| Manuel    | 2084-12-21 | 
+		| Clarence  | 2083-03-24 | 
+		| Frederick | 2077-12-07 | 
+		| Effie     | 2071-12-03 | 
+		| Derrick   | 2056-06-30 | 
+		| Harriet   | 2052-12-08 | 
+		| Parth     | 1982-03-21 | 
+		| Allen     | 1981-02-20 | 
+		| Smith     | 1980-12-17 | 
+		+-----------+------------+ 
+		11 rows in set (0.001 sec) 
+		
+		
+		5. List employee name, salary, PF, HRA, DA and gross; order the results in the ascending order of 
+		gross. HRA is 50% of the salary and DA is 30% of the salary. 
+		
+		MariaDB [Company]> select empname, sal, sal*.10 as PF, sal*.50 as HRA, sal*.30 as DA, sal + sal*.90 as Gross from emp order by Gross; 
+		+-----------+------+--------+---------+---------+---------+ 
+		| empname   | sal  | PF     | HRA     | DA      | Gross   | 
+		+-----------+------+--------+---------+---------+---------+ 
+		| Smith     |  800 |  80.00 |  400.00 |  240.00 | 1520.00 | 
+		| Allen     | 1936 | 193.60 |  968.00 |  580.80 | 3678.40 | 
+		| Parth     | 2000 | 200.00 | 1000.00 |  600.00 | 3800.00 | 
+		| Effie     | 2012 | 201.20 | 1006.00 |  603.60 | 3822.80 | 
+		| Harriet   | 2362 | 236.20 | 1181.00 |  708.60 | 4487.80 | 
+		| Derrick   | 2659 | 265.90 | 1329.50 |  797.70 | 5052.10 | 
+		| Manuel    | 2773 | 277.30 | 1386.50 |  831.90 | 5268.70 | 
+		| Henrietta | 2780 | 278.00 | 1390.00 |  834.00 | 5282.00 | 
+		| Mable     | 2937 | 293.70 | 1468.50 |  881.10 | 5580.30 | 
+		| Clarence  | 3175 | 317.50 | 1587.50 |  952.50 | 6032.50 | 
+		| Frederick | 3597 | 359.70 | 1798.50 | 1079.10 | 6834.30 | 
+		+-----------+------+--------+---------+---------+---------+ 
+		11 rows in set (0.001 sec) 
+		
+		
+		6. List the department numbers and number of employees in each department. 
+		
+		MariaDB [Company]> select deptno,count(*) from emp group by deptno; 
+		+--------+----------+ 
+		| deptno | count(*) | 
+		+--------+----------+ 
+		|     10 |        1 | 
+		|     20 |        3 | 
+		|     30 |        4 | 
+		|     40 |        3 | 
+		+--------+----------+ 
+		4 rows in set (0.001 sec) 
+		
+		
+		7. Increment the Salary of salesman by 10% of basic salary. 
+		MariaDB [Company]> update emp set sal=sal+(sal*.10) where job='sales'; 
+		Query OK, 3 rows affected (0.053 sec) 
+		Rows matched: 3  Changed: 3  Warnings: 0 
+		
+		8. List the total salary, maximum and minimum salary and average salary of the employees, for 
+		department 20. 
+		
+		MariaDB [Company]> select sum(sal),max(sal),min(sal),avg(sal) from emp where deptno=20; 
+		+----------+----------+----------+-----------+ 
+		| sum(sal) | max(sal) | min(sal) | avg(sal)  | 
+		+----------+----------+----------+-----------+ 
+		|     6759 |     3597 |      800 | 2253.0000 | 
+		+----------+----------+----------+-----------+ 
+		1 row in set (0.001 sec) 
+		
+		9. List the employees whose names contains 3 rd letter as 'I'. 
+		
+		MariaDB [Company]> select empname from emp where empname like '__i%'; 
+		+---------+ 
+		| empname | 
+		+---------+ 
+		| Smith   | 
+		+---------+ 
+		1 row in set (0.001 sec) 
+		
+		
+		10. List the maximum salary paid to a salesman. 
+		
+		
+		MariaDB [Company]> select *, max(sal) from emp where job='sales'; 
+		+-------+-----------+-------+------+------------+------+------+--------+----------+ 
+		| empno | empname   | job   | mgr  | hiredate   | sal  | comm | deptno | max(sal) | 
+		+-------+-----------+-------+------+------------+------+------+--------+----------+ 
+		|  7670 | Henrietta | Sales | 7381 | 2121-11-16 | 3058 |  217 |     30 |     3058 | 
+		+-------+-----------+-------+------+------------+------+------+--------+----------+ 
+		1 row in set (0.001 sec) 
+		
+		
+		11. Increase the salary of salesman by 10% of their current salary. 
+		
+		MariaDB [Company]> update emp set sal=sal+(sal*.10) where job='sales'; 
+		Query OK, 3 rows affected (0.054 sec) 
+		Rows matched: 3  Changed: 3  Warnings: 0 
+		
+	\end{lstlisting} 
+	
+	\textbf{Queries Set 2:} 
+	\begin{lstlisting}[language=SQL] 
+		
+		1. List the employee names and his annual salary dept wise. 
+		
+		MariaDB [Company]> select deptno, empname, sal*12 as Annual_Sal from emp order by deptno; 
+		+--------+-----------+------------+ 
+		| deptno | empname   | Annual_Sal | 
+		+--------+-----------+------------+ 
+		|     10 | Manuel    |      33276 | 
+		|     20 | Harriet   |      28344 | 
+		|     20 | Frederick |      43164 | 
+		|     20 | Smith     |       9600 | 
+		|     30 | Derrick   |      38616 | 
+		|     30 | Henrietta |      40368 | 
+		|     30 | Allen     |      23232 | 
+		|     30 | Effie     |      29208 | 
+		|     40 | Parth     |      24000 | 
+		|     40 | Mable     |      35244 | 
+		|     40 | Clarence  |      38100 | 
+		+--------+-----------+------------+ 
+		11 rows in set (0.001 sec) 
+		
+		2. Find out least 5 earners of the company. 
+		
+		MariaDB [Company]> select empname from emp order by sal asc limit 5; 
+		+---------+ 
+		| empname | 
+		+---------+ 
+		| Smith   | 
+		| Allen   | 
+		| Parth   | 
+		| Harriet | 
+		| Effie   | 
+		+---------+ 
+		5 rows in set (0.001 sec) 
+		
+		3. List the records from emp whose deptno is not in dept 
+		
+		MariaDB [Company]> select * from emp where deptno not in (select deptno from dept); 
+		+-------+---------+------+------+------------+------+------+--------+ 
+		| empno | empname | job  | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+---------+------+------+------------+------+------+--------+ 
+		|  7500 | Parth   | HR   | 7989 | 1982-03-21 | 2000 |  300 |     60 | 
+		+-------+---------+------+------+------------+------+------+--------+ 
+		1 row in set (0.001 sec) 
+		
+		4. List those employees whose sal is odd value. 
+		
+		MariaDB [Company]> select * from emp where sal % 2 != 0; 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		| empno | empname   | job        | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		|  7128 | Frederick | Research   | 7589 | 2077-12-07 | 3597 |  203 |     20 | 
+		|  7352 | Manuel    | Accounting | 6190 | 2084-12-21 | 2773 |  253 |     10 | 
+		|  7375 | Mable     | Operations | 6333 | 2097-01-17 | 2937 |  210 |     40 | 
+		|  7871 | Clarence  | Operations | 6991 | 2083-03-24 | 3175 |  228 |     40 | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		4 rows in set (0.001 sec) 
+		
+		5. List the employees whose sal contain 3 digits. 
+		MariaDB [Company]> select * from emp where sal/1000 < 1; 
+		+-------+---------+-------+------+------------+-----+------+--------+ 
+		| empno | empname | job   | mgr  | hiredate   | sal | comm | deptno | 
+		+-------+---------+-------+------+------------+-----+------+--------+ 
+		|  7369 | Smith   | Clerk | 7902 | 1980-12-17 | 800 |  300 |     20 | 
+		+-------+---------+-------+------+------------+-----+------+--------+ 
+		1 row in set (0.001 sec) 
+		
+		6. List the employees who joined in the month of 'DEC' 
+		MariaDB [Company]> select * from emp where hiredate like "%%%%-12-%%"; 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		| empno | empname   | job        | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		|  7054 | Harriet   | Research   | 7917 | 2052-12-08 | 2362 |  229 |     20 | 
+		|  7128 | Frederick | Research   | 7589 | 2077-12-07 | 3597 |  203 |     20 | 
+		|  7352 | Manuel    | Accounting | 6190 | 2084-12-21 | 2773 |  253 |     10 | 
+		|  7369 | Smith     | Clerk      | 7902 | 1980-12-17 |  800 |  300 |     20 | 
+		|  7941 | Effie     | Sales      | 6074 | 2071-12-03 | 2434 |  265 |     30 | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		5 rows in set (0.001 sec) 
+		
+		
+		7. List the employees whose names contains 'A' 
+		
+		MariaDB [Company]> select * from emp where empname like "A%"; 
+		+-------+---------+----------+------+------------+------+------+--------+ 
+		| empno | empname | job      | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+---------+----------+------+------------+------+------+--------+ 
+		|  7499 | Allen   | Salesman | 7698 | 1981-02-20 | 1936 |  300 |     30 | 
+		+-------+---------+----------+------+------------+------+------+--------+ 
+		1 row in set (0.001 sec) 
+		
+		8. List the maximum, minimum and average salary in the company. 
+		MariaDB [Company]> select max(sal), min(sal), avg(sal) from emp; 
+		+----------+----------+-----------+ 
+		| max(sal) | min(sal) | avg(sal)  | 
+		+----------+----------+-----------+ 
+		|     3597 |      800 | 2599.6364 | 
+		+----------+----------+-----------+ 
+		1 row in set (0.000 sec) 
+		
+		9. Write a query to return the day of the week for any date(or HIRE_DATE) entered in format 
+		'DD-MM-YY' 
+		
+		MariaDB [Company]> select dayname(hiredate) from emp; 
+		+-------------------+ 
+		| dayname(hiredate) | 
+		+-------------------+ 
+		| Sunday            | 
+		| Tuesday           | 
+		| Thursday          | 
+		| Wednesday         | 
+		| Thursday          | 
+		| Friday            | 
+		| Sunday            | 
+		| Sunday            | 
+		| Friday            | 
+		| Wednesday         | 
+		| Thursday          | 
+		+-------------------+ 
+		11 rows in set (0.001 sec) 
+		
+		10. Count the no of characters in employee name without considering spaces for each name. 
+		
+		MariaDB [Company]> select empname, length(replace(empname, ' ', '')) + 1 as length from emp; 
+		+-----------+--------+ 
+		| empname   | length | 
+		+-----------+--------+ 
+		| Harriet   |      8 | 
+		| Frederick |     10 | 
+		| Manuel    |      7 | 
+		| Smith     |      6 | 
+		| Mable     |      6 | 
+		| Allen     |      6 | 
+		| Parth     |      6 | 
+		| Henrietta |     10 | 
+		| Derrick   |      8 | 
+		| Clarence  |      9 | 
+		| Effie     |      6 | 
+		+-----------+--------+ 
+		11 rows in set (0.001 sec) 
+		
+		11. List the employees who are drawing less than 1000. sort the output by salary. 
+		
+		MariaDB [Company]> select * from emp where sal < 1000 order by sal; 
+		+-------+---------+-------+------+------------+-----+------+--------+ 
+		| empno | empname | job   | mgr  | hiredate   | sal | comm | deptno | 
+		+-------+---------+-------+------+------------+-----+------+--------+ 
+		|  7369 | Smith   | Clerk | 7902 | 1980-12-17 | 800 |  300 |     20 | 
+		+-------+---------+-------+------+------------+-----+------+--------+ 
+		1 row in set (0.002 sec) 
+	\end{lstlisting} 
+	\textbf{Queries Set 3:} 
+	\begin{lstlisting}[language=SQL] 
+		1. Write a query in SQL to display the unique designations for the employees. 
+		
+		MariaDB [Company]> select distinct job from emp; 
+		+------------+ 
+		| job        | 
+		+------------+ 
+		| Research   | 
+		| Accounting | 
+		| Clerk      | 
+		| Operations | 
+		| Salesman   | 
+		| HR         | 
+		| Sales      | 
+		+------------+ 
+		7 rows in set (0.001 sec) 
+		
+		2. Delete Employees who joined in Year 1980. 
+		MariaDB [Company]> delete from emp where year(hiredate) = 1980; 
+		Query OK, 1 row affected (0.127 sec) 
+		
+		3. Increase the salary of Managers by 20% of their current salary. 
+		MariaDB [Company]> update emp set sal = sal + sal*0.2 where job = 'Manager'; 
+		Query OK, 0 rows affected (0.001 sec) 
+		Rows matched: 0  Changed: 0  Warnings: 0 
+		
+		4. List employees not belonging to department 30, 40, or 10. 
+		
+		MariaDB [Company]> select * from emp where deptno not in (30, 40, 10); 
+		+-------+-----------+----------+------+------------+------+------+--------+ 
+		| empno | empname   | job      | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+----------+------+------------+------+------+--------+ 
+		|  7054 | Harriet   | Research | 7917 | 2052-12-08 | 2362 |  229 |     20 | 
+		|  7128 | Frederick | Research | 7589 | 2077-12-07 | 3597 |  203 |     20 | 
+		|  7500 | Parth     | HR       | 7989 | 1982-03-21 | 2000 |  300 |     60 | 
+		+-------+-----------+----------+------+------------+------+------+--------+ 
+		3 rows in set (0.001 sec) 
+		
+		5. List the different designations in the company. 
+		
+		MariaDB [Company]> select distinct job from emp; 
+		+------------+ 
+		| job        | 
+		+------------+ 
+		| Research   | 
+		| Accounting | 
+		| Operations | 
+		| Salesman   | 
+		| HR         | 
+		| Sales      | 
+		+------------+ 
+		6 rows in set (0.001 sec) 
+		
+		6. List the names of employees who are not eligible for commission. 
+		
+		MariaDB [Company]> select * from emp where sal < 1000; 
+		Empty set (0.001 sec) 
+		
+		7. List employees whose names either start or end with "S". 
+		
+		MariaDB [Company]>   select * from emp where empname like 'S%' or empname like '%S'; 
+		Empty set (0.001 sec) 
+		
+		8. List employees whose names have letter "A" as second letter in their names. 
+		
+		MariaDB [Company]> select * from emp where empname like '_A%'; 
+		+-------+---------+------------+------+------------+------+------+--------+ 
+		| empno | empname | job        | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+---------+------------+------+------------+------+------+--------+ 
+		|  7054 | Harriet | Research   | 7917 | 2052-12-08 | 2362 |  229 |     20 | 
+		|  7352 | Manuel  | Accounting | 6190 | 2084-12-21 | 2773 |  253 |     10 | 
+		|  7375 | Mable   | Operations | 6333 | 2097-01-17 | 2937 |  210 |     40 | 
+		|  7500 | Parth   | HR         | 7989 | 1982-03-21 | 2000 |  300 |     60 | 
+		+-------+---------+------------+------+------------+------+------+--------+ 
+		4 rows in set (0.001 sec) 
+		
+		9. List the number of employees working with the company. 
+		
+		MariaDB [Company]> select count(*) from emp; 
+		+----------+ 
+		| count(*) | 
+		+----------+ 
+		|       10 | 
+		+----------+ 
+		1 row in set (0.001 sec) 
+		
+		10. List the emps with hiredate in format June 4,1988. 
+		
+		MariaDB [Company]> select * from emp where hiredate = '1988-06-04'; 
+		Empty set (0.001 sec) 
+		
+		11. List the salesmen who get the commission within a range of 200 and 5000. 
+		
+		MariaDB [Company]> select * from emp where job = 'Sales' and comm between 200 and 5000; 
+		+-------+-----------+-------+------+------------+------+------+--------+ 
+		| empno | empname   | job   | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+-------+------+------------+------+------+--------+ 
+		|  7670 | Henrietta | Sales | 7381 | 2121-11-16 | 3364 |  217 |     30 | 
+		|  7705 | Derrick   | Sales | 7234 | 2056-06-30 | 3218 |  208 |     30 | 
+		|  7941 | Effie     | Sales | 6074 | 2071-12-03 | 2434 |  265 |     30 | 
+		+-------+-----------+-------+------+------------+------+------+--------+ 
+		3 rows in set (0.001 sec) 
+		
+	\end{lstlisting} 
+	
+	\textbf{Queries Set 4:} 
+	\begin{lstlisting}[language=SQL] 
+		## Set 4 
+		
+		1. List names of employees who are more than 2 years old in the company. 
+		
+		MariaDB [Company]> select empname from emp where datediff(curdate(), hiredate)/365 > 2; 
+		+---------+ 
+		| empname | 
+		+---------+ 
+		| Allen   | 
+		| Parth   | 
+		+---------+ 
+		2 rows in set (0.002 sec) 
+		
+		2. List the employee details in the ascending order of their basic salary. 
+		
+		MariaDB [Company]> select * from emp order by sal; 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		| empno | empname   | job        | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		|  7499 | Allen     | Salesman   | 7698 | 1981-02-20 | 1936 |  300 |     30 | 
+		|  7500 | Parth     | HR         | 7989 | 1982-03-21 | 2000 |  300 |     60 | 
+		|  7054 | Harriet   | Research   | 7917 | 2052-12-08 | 2362 |  229 |     20 | 
+		|  7941 | Effie     | Sales      | 6074 | 2071-12-03 | 2434 |  265 |     30 | 
+		|  7352 | Manuel    | Accounting | 6190 | 2084-12-21 | 2773 |  253 |     10 | 
+		|  7375 | Mable     | Operations | 6333 | 2097-01-17 | 2937 |  210 |     40 | 
+		|  7871 | Clarence  | Operations | 6991 | 2083-03-24 | 3175 |  228 |     40 | 
+		|  7705 | Derrick   | Sales      | 7234 | 2056-06-30 | 3218 |  208 |     30 | 
+		|  7670 | Henrietta | Sales      | 7381 | 2121-11-16 | 3364 |  217 |     30 | 
+		|  7128 | Frederick | Research   | 7589 | 2077-12-07 | 3597 |  203 |     20 | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		10 rows in set (0.001 sec) 
+		
+		3. Display the employees who have more salary as that of Smith 
+		
+		MariaDB [Company]> select * from emp where sal > (select sal from emp where empname = 'Manuel'); 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		| empno | empname   | job        | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		|  7128 | Frederick | Research   | 7589 | 2077-12-07 | 3597 |  203 |     20 | 
+		|  7375 | Mable     | Operations | 6333 | 2097-01-17 | 2937 |  210 |     40 | 
+		|  7670 | Henrietta | Sales      | 7381 | 2121-11-16 | 3364 |  217 |     30 | 
+		|  7705 | Derrick   | Sales      | 7234 | 2056-06-30 | 3218 |  208 |     30 | 
+		|  7871 | Clarence  | Operations | 6991 | 2083-03-24 | 3175 |  228 |     40 | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		5 rows in set (0.001 sec) 
+		
+		4. Increment the salary of Emp no. 9180 by 10% of his current salary. 
+		
+		MariaDB [Company]> select * from emp where empno = 9180; 
+		+-------+---------+-----------+------+------------+------+------+--------+ 
+		| empno | empname | job       | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+---------+-----------+------+------------+------+------+--------+ 
+		|  9180 | Jesse   | Acounting | 6534 | 2101-08-22 | 3562 | 1420 |     10 | 
+		+-------+---------+-----------+------+------------+------+------+--------+ 
+		1 row in set (0.001 sec) 
+		
+		5. List the employees whose salary is between 10000 and 25000. 
+		
+		MariaDB [Company]> select * from emp where sal between 10000 and 25000; 
+		+-------+---------+------+------+------------+-------+------+--------+ 
+		| empno | empname | job  | mgr  | hiredate   | sal   | comm | deptno | 
+		+-------+---------+------+------+------------+-------+------+--------+ 
+		|  7500 | Parth   | HR   | 7989 | 1982-03-21 | 11100 |  300 |     60 | 
+		+-------+---------+------+------+------------+-------+------+--------+ 
+		1 row in set (0.001 sec) 
+		
+		6. List the names of employees who are not eligible for commission. 
+		
+		MariaDB [Company]> select * from emp where sal < 1000; 
+		+-------+---------+-------+------+------------+-----+------+--------+ 
+		| empno | empname | job   | mgr  | hiredate   | sal | comm | deptno | 
+		+-------+---------+-------+------+------------+-----+------+--------+ 
+		|  7941 | Effie   | Sales | 6074 | 2071-12-03 | 700 |  265 |     30 | 
+		+-------+---------+-------+------+------------+-----+------+--------+ 
+		1 row in set (0.001 sec) 
+		
+		7. Increment the Salary of Research by 10% of basic salary. 
+		
+		MariaDB [Company]> update emp set sal = sal + sal*0.1 where job = "Research"; 
+		Query OK, 2 rows affected (0.054 sec) 
+		Rows matched: 2  Changed: 2  Warnings: 0 
+		
+		8. List the total salary, maximum and minimum salary and average salary of the employees jobwise. 
+		
+		MariaDB [Company]> select job, sum(sal) as total, max(sal) as max, min(sal) as min, avg(sal) as avg from emp group by job; 
+		+------------+-------+-------+-------+------------+ 
+		| job        | total | max   | min   | avg        | 
+		+------------+-------+-------+-------+------------+ 
+		| Accounting |  2773 |  2773 |  2773 |  2773.0000 | 
+		| Acounting  |  3562 |  3562 |  3562 |  3562.0000 | 
+		| HR         | 11100 | 11100 | 11100 | 11100.0000 | 
+		| Operations |  6112 |  3175 |  2937 |  3056.0000 | 
+		| Research   |  6555 |  3957 |  2598 |  3277.5000 | 
+		| Sales      |  7282 |  3364 |   700 |  2427.3333 | 
+		| Salesman   |  1936 |  1936 |  1936 |  1936.0000 | 
+		+------------+-------+-------+-------+------------+ 
+		7 rows in set (0.001 sec) 
+		
+		9. Delete the Employee whose name starts with P. 
+		
+		MariaDB [Company]> delete from emp where empname like 'P%'; 
+		Query OK, 1 row affected (0.106 sec) 
+		
+		10. List the employees whose designation is "Research" and commission is > 500. 
+		+-------+-----------+----------+------+------------+------+------+--------+ 
+		| empno | empname   | job      | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+----------+------+------------+------+------+--------+ 
+		|  7054 | Harriet   | Research | 7917 | 2052-12-08 | 2598 |  610 |     20 | 
+		|  7128 | Frederick | Research | 7589 | 2077-12-07 | 3957 |  610 |     20 | 
+		+-------+-----------+----------+------+------------+------+------+--------+ 
+		2 rows in set (0.001 sec) 
+		
+		11. List employees belonging to department 20, 30, 40. 
+		
+		MariaDB [Company]> select * from emp where deptno in (20, 30, 40); 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		| empno | empname   | job        | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		|  7054 | Harriet   | Research   | 7917 | 2052-12-08 | 2598 |  610 |     20 | 
+		|  7128 | Frederick | Research   | 7589 | 2077-12-07 | 3957 |  610 |     20 | 
+		|  7375 | Mable     | Operations | 6333 | 2097-01-17 | 2937 |  210 |     40 | 
+		|  7499 | Allen     | Salesman   | 7698 | 1981-02-20 | 1936 |  300 |     30 | 
+		|  7670 | Henrietta | Sales      | 7381 | 2121-11-16 | 3364 |  217 |     30 | 
+		|  7705 | Derrick   | Sales      | 7234 | 2056-06-30 | 3218 |  208 |     30 | 
+		|  7871 | Clarence  | Operations | 6991 | 2083-03-24 | 3175 |  228 |     40 | 
+		|  7941 | Effie     | Sales      | 6074 | 2071-12-03 |  700 |  265 |     30 | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		8 rows in set (0.001 sec) 
+		
+	\end{lstlisting} 
+	\textbf{Queries Set 5:} 
+	\begin{lstlisting}[language=SQL] 
+		1. List the employee names and his annual salary Job wise. 
+		
+		MariaDB [Company]> select job, empname, sal*12 as annual from emp; 
+		+------------+-----------+--------+ 
+		| job        | empname   | annual | 
+		+------------+-----------+--------+ 
+		| Research   | Harriet   |  31176 | 
+		| Research   | Frederick |  47484 | 
+		| Accounting | Manuel    |  33276 | 
+		| Operations | Mable     |  35244 | 
+		| Salesman   | Allen     |  23232 | 
+		| Sales      | Henrietta |  40368 | 
+		| Sales      | Derrick   |  38616 | 
+		| Operations | Clarence  |  38100 | 
+		| Sales      | Effie     |   8400 | 
+		| Acounting  | Jesse     |  42744 | 
+		+------------+-----------+--------+ 
+		10 rows in set (0.001 sec) 
+		
+		2. Delete the Employee whose name starts with A & R 
+		
+		delete from emp where empname like 'A%' or empname like 'R%'; 
+		Query OK, 1 row affected (0.163 sec) 
+		
+		3. Increment the salary of Emp no. 7000 by 30% of his current salary. 
+		
+		MariaDB [Company]> update emp set sal = sal + sal*0.3 where empno = 7000; 
+		Query OK, 1 row affected (0.043 sec) 
+		Rows matched: 1  Changed: 1  Warnings: 0 
+		
+		4. List the total salary, maximum and minimum salary and average salary of the employees hire date wise. 
+		
+		MariaDB [Company]> select hiredate, sum(sal) as total, max(sal) as max, min(sal) as min, avg(sal) as avg from emp group by hiredate; 
+		+------------+-------+------+------+-----------+ 
+		| hiredate   | total | max  | min  | avg       | 
+		+------------+-------+------+------+-----------+ 
+		| 2052-12-08 |  2598 | 2598 | 2598 | 2598.0000 | 
+		| 2056-06-30 |  3218 | 3218 | 3218 | 3218.0000 | 
+		| 2071-12-03 |   700 |  700 |  700 |  700.0000 | 
+		| 2077-12-07 |  3957 | 3957 | 3957 | 3957.0000 | 
+		| 2083-03-24 |  3175 | 3175 | 3175 | 3175.0000 | 
+		| 2084-12-21 |  2773 | 2773 | 2773 | 2773.0000 | 
+		| 2097-01-17 |  2937 | 2937 | 2937 | 2937.0000 | 
+		| 2101-08-22 | 12662 | 9100 | 3562 | 6331.0000 | 
+		| 2121-11-16 |  3364 | 3364 | 3364 | 3364.0000 | 
+		+------------+-------+------+------+-----------+ 
+		9 rows in set (0.001 sec) 
+		
+		5. List the employees whose names contains last letter as 'T'. 
+		
+		MariaDB [Company]>  select * from emp where empname like '%T';  
+		+-------+---------+----------+------+------------+------+------+--------+ 
+		| empno | empname | job      | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+---------+----------+------+------------+------+------+--------+ 
+		|  7054 | Harriet | Research | 7917 | 2052-12-08 | 2598 |  610 |     20 | 
+		+-------+---------+----------+------+------------+------+------+--------+ 
+		1 row in set (0.001 sec) 
+		
+		6. Display the employees who have less salary as that of Ankush 
+		
+		MariaDB [Company]> select * from emp where sal < (select sal from emp where empname = 'Ankush'); 
+		Empty set (0.001 sec) 
+		
+		7. Display the employees who have salary between 10000 
+		
+		MariaDB [Company]> select * from emp where sal between 10000 and 20000; 
+		Empty set (0.001 sec) 
+		
+		8. List employees belonging to department 30, 40, or 10. 
+		
+		MariaDB [Company]> select * from emp where deptno in (30, 40, 10); 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		| empno | empname   | job        | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		|  7352 | Manuel    | Accounting | 6190 | 2084-12-21 | 2773 |  253 |     10 | 
+		|  7375 | Mable     | Operations | 6333 | 2097-01-17 | 2937 |  210 |     40 | 
+		|  7670 | Henrietta | Sales      | 7381 | 2121-11-16 | 3364 |  217 |     30 | 
+		|  7705 | Derrick   | Sales      | 7234 | 2056-06-30 | 3218 |  208 |     30 | 
+		|  7871 | Clarence  | Operations | 6991 | 2083-03-24 | 3175 |  228 |     40 | 
+		|  7941 | Effie     | Sales      | 6074 | 2071-12-03 |  700 |  265 |     30 | 
+		|  9180 | Jesse     | Acounting  | 6534 | 2101-08-22 | 3562 | 1420 |     10 | 
+		+-------+-----------+------------+------+------------+------+------+--------+ 
+		7 rows in set (0.001 sec) 
+		
+		9. List the employees whose designation is 'Research' and sal is > 5000. 
+		
+		MariaDB [Company]>  select * from emp where job = 'Research' and sal > 5000; 
+		Empty set (0.001 sec) 
+		
+		10. List the employees details descending wise whose designation is 'Research' and commission is > 500. 
+		
+		MariaDB [Company]> select * from emp where job = 'Research' and comm > 500 order by comm desc; 
+		+-------+-----------+----------+------+------------+------+------+--------+ 
+		| empno | empname   | job      | mgr  | hiredate   | sal  | comm | deptno | 
+		+-------+-----------+----------+------+------------+------+------+--------+ 
+		|  7054 | Harriet   | Research | 7917 | 2052-12-08 | 2598 |  610 |     20 | 
+		|  7128 | Frederick | Research | 7589 | 2077-12-07 | 3957 |  610 |     20 | 
+		+-------+-----------+----------+------+------------+------+------+--------+ 
+		2 rows in set (0.001 sec) 
+		
+	\end{lstlisting} 
+	
+	\section{\textbf{Conclusion}} 
+	Thus, we have learned SQL DML commands, SELECT Command with SQL operators thoroughly 
+	
+	\section{\textbf{FAQs}} 
+	\subsection{\textbf{What is the between Truncate table and Drop table?}} 
+	\begin{itemize} 
+		\item Truncate table is used to delete all the records from the table. It is faster than 
+		\item Drop table is used to delete the table completely from the database. 
+		\item Truncate table is faster than drop table. 
+		\item Truncate table command cannot be rolled back. 
+		\item Drop table command can be rolled back. 
+	\end{itemize} 
+	\textbf{Example:} 
+	\begin{itemize} 
+		\item Truncate table Command; 
+		\begin{verbatim} 
+			Truncate table emp; 
+		\end{verbatim} 
+		\item Drop table Command; 
+		\begin{verbatim} 
+			Drop table emp; 
+		\end{verbatim} 
+	\end{itemize} 
+	
+	\subsection{\textbf{How is the pattern matching done in SQL?}} 
+	\begin{itemize} 
+		\item The pattern matching is done using the LIKE operator. 
+		\item The LIKE operator is used in the WHERE clause of the SELECT statement. 
+		\item The LIKE operator is used to search for a specific pattern in a column. 
+		\item The pattern can be a string or a number. 
+		\item The pattern can contain special characters. 
+		\item The special characters are: 
+		\begin{itemize} 
+			\item \% - The percent sign represents zero, one, or multiple characters. 
+			\item \_ - The underscore represents a single character. 
+		\end{itemize} 
+	\end{itemize} 
+	\textbf{The Syntax of the command is:} 
+	\begin{verbatim} 
+		SELECT column_name(s) 
+		FROM table_name 
+		WHERE column_name LIKE pattern; 
+	\end{verbatim} 
+	\textbf{Example:} 
+	\begin{verbatim} 
+		SELECT * FROM emp WHERE empname LIKE 'S%'; 
+		SELECT * FROM emp WHERE empname LIKE 'S__'; 
+	\end{verbatim} 
+	
+	\subsection{\textbf{Write a DELETE command to delete all the records from CUSTOMER table}} 
+	\begin{verbatim} 
+		DELETE FROM CUSTOMER; 
+	\end{verbatim} 
+\end{document}
